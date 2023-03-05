@@ -1,11 +1,11 @@
 <?php
 include 'connection.php';
 
-function CreateUser()
+function CrearTelefonoModel($Telefono, $UsuarioId)
 {
     $instancia = Open();
 
-    $sentencia = "CALL registerUser();";
+    $sentencia = "CALL CrearTelefono($Telefono,$UsuarioId);";
     $resultado = $instancia -> query($sentencia);
 
     Close($instancia);
@@ -13,44 +13,44 @@ function CreateUser()
 }
 
 
-function GetUsers()
+function ObtenerTelefonosModel($UsuarioId)
 {
     $instancia = Open();
 
-    $sentencia = "CALL getUsers();";
+    $sentencia = "CALL ObtenerTelefonos($UsuarioId);";
     $resultado = $instancia -> query($sentencia);
 
     Close($instancia);
     return $resultado;    
 }
 
-function GetUserbyId()
+function ObtenerTelefonoModel($TelefonoId)
 {
     $instancia = Open();
 
-    $sentencia = "CALL getUser();";
+    $sentencia = "CALL ObtenerTelefono($TelefonoId);";
     $resultado = $instancia -> query($sentencia);
 
     Close($instancia);
     return $resultado;    
 }
 
-function UpdateUsers()
+function EditarTelefonoModel($Telefono, $TelefonoId )
 {
     $instancia = Open();
 
-    $sentencia = "CALL updateUser();";
+    $sentencia = "CALL 	EditarTelefono($Telefono, $TelefonoId);";
     $resultado = $instancia -> query($sentencia);
 
     Close($instancia);
     return $resultado;    
 }
 
-function DeleteUser()
+function EliminarTelefonoModel($TelefonoId)
 {
     $instancia = Open();
 
-    $sentencia = "CALL removeUser();";
+    $sentencia = "CALL EliminarTelefono($TelefonoId);";
     $resultado = $instancia -> query($sentencia);
 
     Close($instancia);
