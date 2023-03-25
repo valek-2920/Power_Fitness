@@ -8,6 +8,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 <?php
 include('utilities.php');
+include_once '../Controllers/loginController.php';
 ?>
 
 <!DOCTYPE HTML>
@@ -33,10 +34,10 @@ include('utilities.php');
           	<div class="container">
 			  <div class="col-md-6">
 				 <div class="login-page">
-					<h4 class="title">New Customers</h4>
-					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis</p>
+					<h4 class="title">Nuevos Clientes</h4>
+					<p>Si se encuentra interesado en utilizar las distintas opciones que ofrecemos como gimnasio, por favor cree una cuenta al apretar el botón Crear Cuenta Nueva </p>
 					<div class="button1">
-					   <a href="register.php"><input type="submit" name="Submit" value="Create an Account"></a>
+					<a href="register.php"><input type="submit" value="!Crear cuenta nueva!"></a>
 					 </div>
 					 <div class="clear"></div>
 				  </div>
@@ -44,23 +45,26 @@ include('utilities.php');
 				<div class="col-md-6">
 				 <div class="login-page">
 				  <div class="login-title">
-	           		<h4 class="title">Registered Customers</h4>
+	           		<h4 class="title">Iniciar Sesión</h4>
 					<div id="loginbox" class="loginbox">
 						<form action="" method="post" name="login" id="login-form">
 						  <fieldset class="input">
 						    <p id="login-form-username">
-						      <label for="modlgn_username">Email</label>
-						      <input id="modlgn_username" type="text" name="email" class="inputbox" size="18" autocomplete="off">
+						      <label for="correoElectronico">Correo</label>
+						      <input id="correoElectronico" type="text" name="correoElectronico" class="inputbox" size="18" required
+							  onkeyup="HabilitarBoton();" autocomplete="off">
 						    </p>
 						    <p id="login-form-password">
-						      <label for="modlgn_passwd">Password</label>
-						      <input id="modlgn_passwd" type="password" name="password" class="inputbox" size="18" autocomplete="off">
+						      <label for="contrasenna">Contraseña</label>
+						      <input id="contrasenna" type="password" name="contrasenna" class="inputbox" required
+							  onkeyup="HabilitarBoton();" size="18" autocomplete="off">
 						    </p>
 						    <div class="remember">
 							    <p id="login-form-remember">
-							      <label for="modlgn_remember"><a href="#">Forget Your Password ? </a></label>
+							      <label for="modlgn_remember"><a href="#">Has olvidado contraseña? </a></label>
 							   </p>
-							    <input type="submit" name="Submit" class="button" value="Login"><div class="clear"></div>
+							   <input type="submit" class="button" value="Iniciar Sesión" disabled
+                                        id="btnIniciarSesion" name="btnIniciarSesion">
 							 </div>
 						  </fieldset>
 						 </form>
@@ -72,9 +76,9 @@ include('utilities.php');
 			</div>
 		  </div>
          </div>
-        
 		 <?php
 		footer();
 	?>
+	    <script src="js/funciones/funcionesLogin.js"></script>
 </body>
 </html>

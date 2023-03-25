@@ -12,7 +12,7 @@ include('utilities.php');
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Free Gym Website Template | Home :: w3layouts</title>
+<title>Power Fitness | Home</title>
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <link href="css/style.css" rel='stylesheet' type='text/css' />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -41,12 +41,8 @@ include('utilities.php');
 	<div class="header">
 	   <div class="container">
 		  <div class="header-text">
-			<h1>Perfect Fitness</h1>
-			<h2>Best Choice For your site</h2>
-			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna</p>
-			<div class="banner_btn">
-				<a href="#">Read More</a>
-			</div>
+			<h1>El gimnasio perfecto</h1>
+			<h2>La mejor opción para cumplir tus metas</h2>
 		  </div>
 		  <div class="header-arrow">
 		     <a href="#menu" class="class scroll"><span> </span </a>
@@ -422,7 +418,7 @@ include('utilities.php');
      </div>
       <div class="row about">
 		 <div class="col-md-8">
-		     	 <h3 class="m_2">Gallery</h3>
+		     	 <h3 class="m_2">Galería</h3>
 		     	 <div id="ca-container" class="ca-container">
 				    <div class="ca-wrapper">
 				         <div class="ca-item ca-item-1">
@@ -480,7 +476,7 @@ include('utilities.php');
 					</script>
 		   </div>
 		   <div class="col-md-4">
-		   	 <h3 class="m_2">Partner</h3>
+		   	 <h3 class="m_2">Patrocinadores</h3>
 			  <ul class="partner">
 			  	<li><img src="images/p6.png" alt=""/></li>
 			  	<li><img src="images/p5.png" alt=""/></li>
@@ -495,23 +491,6 @@ include('utilities.php');
 	      </div>
 	     </div>
 		</div>
-	    <div class="map">
-			<iframe width="100%" height="450" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=United+Kingdom&amp;aq=0&amp;oq=un&amp;sll=37.0625,-95.677068&amp;sspn=48.956293,107.138672&amp;ie=UTF8&amp;hq=&amp;hnear=United+Kingdom&amp;ll=55.378051,-3.435973&amp;spn=135.795411,68.554687&amp;t=m&amp;z=2&amp;output=embed"> </iframe><br /><small><a href="http://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=United+Kingdom&amp;aq=0&amp;oq=un&amp;sll=37.0625,-95.677068&amp;sspn=48.956293,107.138672&amp;ie=UTF8&amp;hq=&amp;hnear=United+Kingdom&amp;ll=55.378051,-3.435973&amp;spn=135.795411,68.554687&amp;t=m&amp;z=2" style="color:#666;font-size:12px;text-align:left"> </a></small>
-			<div class="opening_hours">
-			 <ul class="times">
-			 	<h3>Opening <span class="opening">Hours</span></h3>
-			 	<li><i class="calender"> </i><span class="week">Monday</span><div class="hours">h.6:00-h.24:00</div>  <div class="clear"></div></li>
-			 	<li><i class="calender"> </i><span class="week">Tuesday</span><div class="hours">h.6:00-h.24:00</div>  <div class="clear"></div></li>
-			 	<li><i class="calender"> </i><span class="week">Wednesday</span><div class="hours">h.6:00-h.24:00</div>  <div class="clear"></div></li>
-			 	<li><i class="calender"> </i><span class="week">Thrusday</span><div class="hours">h.6:00-h.24:00</div>  <div class="clear"></div></li>
-			 	<li><i class="calender"> </i><span class="week">Friday</span><div class="hours">h.6:00-h.24:00</div>  <div class="clear"></div></li>
-			 	<li><i class="calender"> </i><span class="week">Saturday</span><div class="hours">h.6:00-h.24:00</div>  <div class="clear"></div></li>
-			 	<li><i class="calender"> </i><span class="week">Sunday</span><div class="hours">h.6:00-h.24:00</div>  <div class="clear"></div></li>
-			    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet</p>
-			 	<h4>Enjoy it!</h4>
-			 </ul>
-		    </div>
-		 </div>
 		 <?php
 		footer();
 	?>

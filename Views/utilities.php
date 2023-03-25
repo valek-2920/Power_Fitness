@@ -5,20 +5,20 @@ function navClient(){
  <div class="menu" id="menu">
  <div class="container">
     <div class="logo">
-       <a href="index.php"><img src="../images/logo.png" alt=""/></a>
+       <a href="index.php"><img src="/images/logo.png" alt=""/></a>
     </div>
     <div class="h_menu4"><!-- start h_menu4 -->
       <a class="toggleMenu" href="#">Menu</a>
         <ul class="nav">
           <li class="active"><a href="index.php">Home</a></li>
-          <li><a href="about.php">About</a></li>
-          <li><a href="trainers.php">Trainers</a></li>
-          <li><a href="classes.php">Classes</a>
+          <li><a href="about.php">Acerca</a></li>
+          <li><a href="trainers.php">Entrenadores</a></li>
+          <li><a href="classes.php">Clases</a>
               
           </li>
           <li><a href="blog.php">Blog</a></li>
-          <li><a href="pricing.php">Pricing</a></li>
-          <li><a href="contact.php">Contact</a></li>
+          <li><a href="pricing.php">Precio</a></li>
+          <li><a href="contact.php">Contacto</a></li>
         </ul>
          <script type="text/javascript" src="js/nav.js"></script>
      </div><!-- end h_menu4 -->
@@ -82,28 +82,21 @@ function navAdmin(){
    <div class="row section group">
    <div class="col-md-6">
      <div class="f-logo">
-       <img src="../images/logo.png" alt=""/>
+       <img src="/images/logo.png" alt=""/>
      </div>
-     <p class="m_9">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis</p>
-     <p class="address">Phone : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="m_10">(00) 222 666 444</span></p>
-     <p class="address">Email : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="m_10">info[at]mycompany.com</span></p>
+     <p class="m_9">Ubicado en ...</p>
+     <p class="address">Phone : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="m_10">(506) 8888 8888</span></p>
+     <p class="address">Email : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="m_10">info@powerfitness.com</span></p>
    </div>
-   <div class="col-md-6">
+   <div class="col-md-4">
      <ul class="list">
        <h4 class="m_7">Menu</h4>
-       <li><a href="#">About</a></li>
-       <li><a href="#">Trainers</a></li>
-       <li><a href="#">Classes</a></li>
-       <li><a href="#">Pricing</a></li>
-       <li><a href="#">Privacy</a></li>
-       <li><a href="#">Contact</a></li>
-     </ul>
-     <ul class="list1">
-       <h4 class="m_7">Community</h4>
-       <li><a href="#">Blog</a></li>
-       <li><a href="#">Forum</a></li>
-       <li><a href="#">Support</a></li>
-       <li><a href="#">Newsletter</a></li>
+       <li><a href="about.php">Acerca</a></li>
+       <li><a href="trainers.php">Entrenadores</a></li>
+       <li><a href="classes.php"">Clases</a></li>
+       <li><a href="pricing.php">Precios</a></li>
+       <li><a href="blog.php">Blog</a></li>
+       <li><a href="contact.php">Contacto</a></li>
      </ul>
    </div>
    <div class="clear"></div>
@@ -129,5 +122,37 @@ function navAdmin(){
   </div>
   <div class="clearfix"></div>
 </footer>
+  ';
+ }
+
+ function loginSpan(){
+  echo '
+  <div class="login">
+  <div class="row login_details">
+    <div class="col-md-6">
+      <div class="join">
+        <h3>Porque unirte?</h3>
+        <h4>sed diam nonummy nibh euismod</h4>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam<br> nibh euismod tincidunt ut laoreet dolore magna . </p>
+        <div class="btn3">
+          <a href="#">Join Today</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="join-right">
+        <h3>Posees ya una cuenta?</h3>
+        <h4>sed diam nonummy nibh euismod</h4>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam<br> nibh euismod tincidunt ut laoreet dolore magna . </p>
+        <div class="buttons_login">
+          <div class="btn4" >
+            <a href="login.php">Iniciar sesión</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>
   ';
  }

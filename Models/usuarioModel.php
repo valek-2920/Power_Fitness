@@ -25,6 +25,16 @@ function CrearUsuarioClienteModel($PrimerNombre, $PrimerApellido, $SegundoApelli
     return $resultado;     
 }
 
+function VerificarExisteCorreoModel($correoElectronico)
+{
+    $instancia = Open();
+
+    $sentencia = "CALL VerificarExisteCorreo('$correoElectronico');";
+    $resultado = $instancia -> query($sentencia);
+
+    Close($instancia);
+    return $resultado;        
+}
 
 function ObtenerUsuariosModel()
 {
@@ -59,11 +69,22 @@ function EditarUsuarioModel($PrimerNombre, $PrimerApellido, $SegundoApellido, $F
     return $resultado;    
 }
 
-function EliminarUsuarioModel($UsuarioId)
+function InactivarUsuarioModel($UsuarioId)
 {
     $instancia = Open();
 
-    $sentencia = "CALL EliminarUsuario($UsuarioId);";
+    $sentencia = "CALL InactivarUsuario($UsuarioId);";
+    $resultado = $instancia -> query($sentencia);
+
+    Close($instancia);
+    return $resultado;    
+}
+
+function ActivarUsuarioModel($UsuarioId)
+{
+    $instancia = Open();
+
+    $sentencia = "CALL ActivarUsuario($UsuarioId);";
     $resultado = $instancia -> query($sentencia);
 
     Close($instancia);
@@ -81,6 +102,17 @@ function generadorContrasenna() {
     }
 
     return $result;
+}
+
+function VerPerfilesModel()
+{
+    $instancia = Open();
+
+    $sentencia = "CALL VerPerfiles();";
+    $resultado = $instancia -> query($sentencia);
+
+    Close($instancia);
+    return $resultado;   
 }
 
 ?>
