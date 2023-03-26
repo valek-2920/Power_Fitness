@@ -12,17 +12,19 @@ function navClient(){
         <ul class="nav">
           <li class="active"><a href="index.php">Home</a></li>
           <li><a href="about.php">Acerca</a></li>
-          <li><a href="trainers.php">Entrenadores</a></li>
           <li><a href="classes.php">Clases</a>
               
           </li>
           <li><a href="blog.php">Blog</a></li>
           <li><a href="pricing.php">Precio</a></li>
           <li><a href="contact.php">Contacto</a></li>
+          <li><a href="profile.php">Cuenta</a></li>
+          <li><a href="#">Cerrar Sesión</a></li>
         </ul>
          <script type="text/javascript" src="js/nav.js"></script>
      </div><!-- end h_menu4 -->
     <div class="clear"></div>
+    <div class="top_nav">
  </div>
 </div>
  ';
@@ -92,7 +94,6 @@ function navAdmin(){
      <ul class="list">
        <h4 class="m_7">Menu</h4>
        <li><a href="about.php">Acerca</a></li>
-       <li><a href="trainers.php">Entrenadores</a></li>
        <li><a href="classes.php"">Clases</a></li>
        <li><a href="pricing.php">Precios</a></li>
        <li><a href="blog.php">Blog</a></li>
