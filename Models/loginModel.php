@@ -11,14 +11,4 @@ function ValidarLoginModel($Correo, $Contrasenna)
     return $resultado;    
 }
 
-function ValidarCorreoModel($Correo){
-    $instancia = Open();
-    $query = "CALL ValidarCorreo('$Correo');";
-    $resultado = $instancia -> query($query);
-
-    Close($instancia);
-    return $resultado; 
-}
-
-
 ?>

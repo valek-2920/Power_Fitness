@@ -1,24 +1,21 @@
 <?php
 include 'connection.php';
 
-function CrearUsuarioAdministradorModel($PrimerNombre, $PrimerApellido, $SegundoApellido, $FechaNacimiento, $Correo) #admin -> 2
+function CrearUsuarioAdministradorModel($primerNombre, $primerApellido, $segundoApellido, $fechaNacimiento, $correoElectronico, $contrasenna) #admin -> 4
 {
     $instancia = Open();
-
-    $contrasenna = generadorContrasenna();
-    $sentencia = "CALL CrearUsuario('$PrimerNombre', '$PrimerApellido', '$SegundoApellido', $FechaNacimiento, '$Correo', '$contrasenna', 2);";
+    $sentencia = "CALL CrearUsuario('$primerNombre', '$primerApellido', '$segundoApellido', $fechaNacimiento, '$correoElectronico', '$contrasenna', 4);";
     $resultado = $instancia -> query($sentencia);
 
     Close($instancia);
     return $resultado;    
 }
 
-function CrearUsuarioClienteModel($PrimerNombre, $PrimerApellido, $SegundoApellido, $FechaNacimiento, $Correo) #client -> 1
+function CrearUsuarioClienteModel($primerNombre, $primerApellido, $segundoApellido, $fechaNacimiento, $correoElectronico, $contrasenna) #client -> 5
 {
     $instancia = Open();
-
-    $Contrasenna = generadorContrasenna();
-    $sentencia = "CALL CrearUsuario('$PrimerNombre', '$PrimerApellido', '$SegundoApellido', $FechaNacimiento, '$Correo', '$Contrasenna', 1);";
+    print($instancia);
+    $sentencia = "CALL CrearUsuario('$primerNombre', '$primerApellido', '$segundoApellido', $fechaNacimiento, '$correoElectronico', '$contrasenna', 5);";
     $resultado = $instancia -> query($sentencia);
 
     Close($instancia);
@@ -28,8 +25,7 @@ function CrearUsuarioClienteModel($PrimerNombre, $PrimerApellido, $SegundoApelli
 function VerificarExisteCorreoModel($correoElectronico)
 {
     $instancia = Open();
-
-    $sentencia = "CALL VerificarExisteCorreo('$correoElectronico');";
+    $sentencia = "CALL ValidarCorreo('$correoElectronico');";
     $resultado = $instancia -> query($sentencia);
 
     Close($instancia);
@@ -39,7 +35,6 @@ function VerificarExisteCorreoModel($correoElectronico)
 function ObtenerUsuariosModel()
 {
     $instancia = Open();
-
     $sentencia = "CALL ObtenerUsuarios();";
     $resultado = $instancia -> query($sentencia);
 
@@ -50,7 +45,6 @@ function ObtenerUsuariosModel()
 function ObtenerUsuarioModel($UsuarioId)
 {
     $instancia = Open();
-
     $sentencia = "CALL ObtenerUsuario($UsuarioId);";
     $resultado = $instancia -> query($sentencia);
 
@@ -61,7 +55,6 @@ function ObtenerUsuarioModel($UsuarioId)
 function EditarUsuarioModel($PrimerNombre, $PrimerApellido, $SegundoApellido, $FechaNacimiento, $Correo, $UsuarioId)
 {
     $instancia = Open();
-
     $sentencia = "CALL EditarUsuario('$PrimerNombre', '$PrimerApellido', '$SegundoApellido', $FechaNacimiento, '$Correo', $UsuarioId);";
     $resultado = $instancia -> query($sentencia);
 
@@ -72,7 +65,6 @@ function EditarUsuarioModel($PrimerNombre, $PrimerApellido, $SegundoApellido, $F
 function InactivarUsuarioModel($UsuarioId)
 {
     $instancia = Open();
-
     $sentencia = "CALL InactivarUsuario($UsuarioId);";
     $resultado = $instancia -> query($sentencia);
 
@@ -83,7 +75,6 @@ function InactivarUsuarioModel($UsuarioId)
 function ActivarUsuarioModel($UsuarioId)
 {
     $instancia = Open();
-
     $sentencia = "CALL ActivarUsuario($UsuarioId);";
     $resultado = $instancia -> query($sentencia);
 
@@ -107,7 +98,6 @@ function generadorContrasenna() {
 function VerPerfilesModel()
 {
     $instancia = Open();
-
     $sentencia = "CALL VerPerfiles();";
     $resultado = $instancia -> query($sentencia);
 

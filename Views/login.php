@@ -47,7 +47,8 @@ include_once '../Controllers/loginController.php';
 				  <div class="login-title">
 	           		<h4 class="title">Iniciar Sesión</h4>
 					<div id="loginbox" class="loginbox">
-						<form action="" method="post" name="login" id="login-form">
+
+						<form action="" method="post" id="login-form">
 						  <fieldset class="input">
 						    <p id="login-form-username">
 						      <label for="correoElectronico">Correo</label>
@@ -68,6 +69,7 @@ include_once '../Controllers/loginController.php';
 							 </div>
 						  </fieldset>
 						 </form>
+
 					</div>
 			      </div>
 				</div>

@@ -3404,28 +3404,34 @@ fieldset.input input[type="submit"]:hover {
 .button1 input[type="submit"]:hover {
 	background:#555;
 }
-.register-top-grid h3, .register-bottom-grid h3 {
-	color:#00BFF0;
-	font-size: 1em;
+.register-top-grid h2, .register-bottom-grid h2 {
+	color:#e9edee;
 	padding-bottom: 5px;
 	margin: 0;
+	margin-left: 21px;
+
+}
+.register-top-grid label, .register-bottom-grid label {
+	color:#fd5e5e;
+
 }
 .register-top-grid div, .register-bottom-grid div {
 	width: 48%;
 	float: left;
-	margin: 10px 0;
+	margin: 12px 0;
+	margin-left: 21px;
 }
 .register-top-grid span, .register-bottom-grid span {
 	color:#555;
-	font-size: 0.85em;
+	font-size: 0.04em;
 	padding-bottom: 0.2em;
 	display: block;
 	text-transform: uppercase;
 }
-.register-top-grid input[type="text"], .register-bottom-grid input[type="text"] {
+.register-top-grid input, .register-bottom-grid input {
 	border: 1px solid #EEE;
 	outline-color:#00BFF0;
-	width: 96%;
+	width: 80%;
 	font-size: 1em;
 	padding: 0.5em;
 	font-family: 'Open Sans', sans-serif;
@@ -3516,6 +3522,7 @@ fieldset.input input[type="submit"]:hover {
 	cursor: pointer;
 	outline: none;
 	text-transform: uppercase;
+	margin-left: 21px;
 }
 .register-grids form input[type="submit"]:hover {
 	background:#555;

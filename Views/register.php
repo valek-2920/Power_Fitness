@@ -20,15 +20,6 @@ include('utilities.php');
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
-	<script type="application/x-javascript">
-		addEventListener("load", function() {
-			setTimeout(hideURLbar, 0);
-		}, false);
-
-		function hideURLbar() {
-			window.scrollTo(0, 1);
-		}
-	</script>
 	<script src="js/jquery.min.js"></script>
 </head>
 
@@ -41,37 +32,41 @@ include('utilities.php');
 	<div class="main">
 		<div class="register-grids">
 			<div class="container">
-				<form>
+				<form action="" method="post">
 					<div class="register-top-grid">
-						<h3>Información Personal</h3>
+						<h2>Información Personal</h2>
 						<div>
 							<p>Primer Nombre<label>*</label></p>
-							<input type="text">
+							<input type="text" id="primerNombre" name="primerNombre" required>
 						</div>
 						<div>
 							<p>Primer Apellido<label>*</label></p>
-							<input type="text">
+							<input type="text" id="primerApellido" name="primerApellido" required>
 						</div>
 						<div>
 							<p>Segundo Apellido<label>*</label></p>
-							<input type="text">
+							<input type="text" id="segundoApellido" name="segundoApellido" required>
 						</div>
 						<div>
-							<p>Numero Telefonico<label>*</label></p>
-							<input type="text">
+							<p>Fecha Nacimiento<label>*</label></p>
+							<input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
 						</div>
 						<div>
 							<p>Correo Electronico<label>*</label></p>
-							<input type="text">
+							<input type="email" id="correoElectronico" name="correoElectronico" required onkeyup="HabilitarBoton();">
 						</div>
 						<div>
 							<p>Contraseña<label>*</label></p>
-							<input type="text">
+							<input type="password" id="contrasenna" name="contrasenna" required onkeyup="HabilitarBoton();">
+						</div>
+						<div>
+							<p>Confirmar Contraseña<label>*</label></p>
+							<input type="password" id="confirmarContrasenna" name="confirmarContrasenna" required onkeyup="HabilitarBoton();">
 						</div>
 						<div class="clear"> </div>
 					</div>
 					<div class="clear"> </div>
-					<input type="submit" value="Crear Cuenta">
+					<input type="submit" value="Crear Cuenta" id="btnRegistrarCuentaCliente" name="btnRegistrarCuentaCliente" disabled>
 				</form>
 			</div>
 		</div>
@@ -79,6 +74,7 @@ include('utilities.php');
 	<?php
 	footer();
 	?>
+	<script src="js/funcionesRegistro.js"></script>
 </body>
 
 </html>

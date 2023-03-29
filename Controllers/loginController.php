@@ -16,9 +16,8 @@ if(isset($_POST["btnIniciarSesion"]))
     if($resultado -> num_rows > 0)
     {
         $datosResultado = mysqli_fetch_array($resultado);
-        $_SESSION["CorreoElectronico"] = $datosResultado["CorreoElectronico"];
+        $_SESSION["Correo"] = $datosResultado["Correo"];
         $_SESSION["TipoUsuario"] = $datosResultado["TipoUsuario"];
-        $_SESSION["NombreTipoUsuario"] = $datosResultado["NombreTipoUsuario"];
 
         if($_SESSION["TipoUsuario"] == "Administrador"){
             header("location: ../Views/admin/index.php");

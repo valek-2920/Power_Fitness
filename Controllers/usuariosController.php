@@ -62,15 +62,21 @@ if (isset($_GET["VerificarExisteCorreo"])) {
     }
 }
 
-if (isset($_POST["btnRegistrarCuenta"])) {
+if (isset($_POST["btnRegistrarCuentaCliente"])) {
+    $primerNombre = $_POST["primerNombre"];
+    $primerApellido = $_POST["primerApellido"];
+    $segundoApellido = $_POST["segundoApellido"];
+    $fechaNacimiento = \DateTime::createFromFormat('m/d/Y', $_POST["fechaNacimiento"]);
     $correoElectronico = $_POST["correoElectronico"];
     $contrasenna = $_POST["contrasenna"];
 
-    $resultado = CrearUsuarioClienteModel($PrimerNombre, $PrimerApellido, $SegundoApellido, $FechaNacimiento, $Correo);
+    $resultado = CrearUsuarioClienteModel($primerNombre, $primerApellido, $segundoApellido, $fechaNacimiento, $correoElectronico, $contrasenna);
 
     if ($resultado == true) {
-        header("location: ../Views/login.php");
+        echo $resultado;
+        header("location: ../Views/index.php");
     } else {
+        echo $resultado;
         echo "No se pudo registrar su cuenta";
     }
 }
@@ -103,14 +109,14 @@ if (isset($_POST["btnRecuperarCuenta"])) {
     }
 }
 
-if (isset($_POST["btnNotificar"])) {
-    $correoElectronico = $_POST["correoElectronico"];
-    $nombreAdjunto = "../Files/" . $_FILES["adjunto"]["name"];
-    move_uploaded_file($_FILES["adjunto"]["tmp_name"], $nombreAdjunto);
+// // if (isset($_POST["btnNotificar"])) {
+// //     $correoElectronico = $_POST["correoElectronico"];
+// //     $nombreAdjunto = "../Files/" . $_FILES["adjunto"]["name"];
+// //     move_uploaded_file($_FILES["adjunto"]["tmp_name"], $nombreAdjunto);
 
-    EnviarCorreo($correoElectronico, 'Practica 2', 'Por favor revise el archivo adjunto', $nombreAdjunto);
-    unlink($nombreAdjunto);
-}
+// //     EnviarCorreo($correoElectronico, 'Practica 2', 'Por favor revise el archivo adjunto', $nombreAdjunto);
+// //     unlink($nombreAdjunto);
+// // }
 
 function EnviarCorreo($destinatario, $asunto, $cuerpo, $pdf)
 {

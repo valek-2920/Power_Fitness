@@ -1,7 +1,8 @@
 <?php
 
-function navClient(){
- echo '
+function navClient()
+{
+  echo '
  <div class="menu" id="menu">
  <div class="container">
     <div class="logo">
@@ -19,8 +20,9 @@ function navClient(){
           <li><a href="pricing.php">Precio</a></li>
           <li><a href="contact.php">Contacto</a></li>
           <li><a href="profile.php">Cuenta</a></li>
-          <li><a href="#">Cerrar Sesión</a></li>
-        </ul>
+          <li><a href="../Controllers/CerrarSesionController.php">Cerrar Sesión</a></li>
+          
+      </ul>
          <script type="text/javascript" src="js/nav.js"></script>
      </div><!-- end h_menu4 -->
     <div class="clear"></div>
@@ -30,7 +32,8 @@ function navClient(){
  ';
 }
 
-function navAdmin(){
+function navAdmin()
+{
   echo '
   <div class="col-md-3 left_col">
   <div class="left_col scroll-view">
@@ -66,7 +69,12 @@ function navAdmin(){
                       <a class="dropdown-item" href="javascript:;">
                           <span>Recuperar Contraseña</span>
                       </a>
-                      <a class="dropdown-item" href="login.html"><i class="fa fa-sign-out pull-right"></i> Cerrar Sesión</a>
+                      <li class="nav-item">
+                      <a class="nav-link collapsed" href="../Controllers/CerrarSesionController.php">
+                          <i class="fas fa-fw fa-door-open"></i>
+                          <span>Cerrar Sesión</span>
+                      </a>
+                  </li>
                   </div>
               </li>
           </ul>
@@ -75,9 +83,10 @@ function navAdmin(){
 </div>
  </div>
   ';
- }
+}
 
- function footer(){
+function footer()
+{
   echo '
   <div class="footer-bottom">
   <div class="container">
@@ -113,9 +122,10 @@ function navAdmin(){
  </div>
   </div>
   ';
- }
+}
 
- function footerAdmin(){
+function footerAdmin()
+{
   echo '
   <footer>
   <div class="pull-right">
@@ -124,9 +134,10 @@ function navAdmin(){
   <div class="clearfix"></div>
 </footer>
   ';
- }
+}
 
- function loginSpan(){
+function loginSpan()
+{
   echo '
   <div class="login">
   <div class="row login_details">
@@ -156,4 +167,4 @@ function navAdmin(){
   </div>
 </div>
   ';
- }
+}
