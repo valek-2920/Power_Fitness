@@ -17,9 +17,10 @@ if(isset($_POST["btnIniciarSesion"]))
     {
         $datosResultado = mysqli_fetch_array($resultado);
         $_SESSION["Correo"] = $datosResultado["Correo"];
-        $_SESSION["TipoUsuario"] = $datosResultado["TipoUsuario"];
+        $_SESSION["RolId"] = $datosResultado["RolId"];
+        $_SESSION["Nombre"] = $datosResultado["Nombre"];
 
-        if($_SESSION["TipoUsuario"] == "Administrador"){
+        if($_SESSION["Nombre"] == "Administrador"){
             header("location: ../Views/admin/index.php");
 
         }else{

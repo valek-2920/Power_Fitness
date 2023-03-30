@@ -4,7 +4,7 @@ include 'connection.php';
 function CrearUsuarioAdministradorModel($primerNombre, $primerApellido, $segundoApellido, $fechaNacimiento, $correoElectronico, $contrasenna) #admin -> 4
 {
     $instancia = Open();
-    $sentencia = "CALL CrearUsuario('$primerNombre', '$primerApellido', '$segundoApellido', $fechaNacimiento, '$correoElectronico', '$contrasenna', 4);";
+    $sentencia = "CALL CrearUsuario('$primerNombre', '$primerApellido', '$segundoApellido', $fechaNacimiento, '$correoElectronico', '$contrasenna', 4)";
     $resultado = $instancia -> query($sentencia);
 
     Close($instancia);
@@ -14,8 +14,8 @@ function CrearUsuarioAdministradorModel($primerNombre, $primerApellido, $segundo
 function CrearUsuarioClienteModel($primerNombre, $primerApellido, $segundoApellido, $fechaNacimiento, $correoElectronico, $contrasenna) #client -> 5
 {
     $instancia = Open();
-    print($instancia);
-    $sentencia = "CALL CrearUsuario('$primerNombre', '$primerApellido', '$segundoApellido', $fechaNacimiento, '$correoElectronico', '$contrasenna', 5);";
+    echo $fechaNacimiento;
+    $sentencia = "CALL CrearUsuario('$primerNombre', '$primerApellido', '$segundoApellido', '$fechaNacimiento', '$correoElectronico', '$contrasenna', 5)";
     $resultado = $instancia -> query($sentencia);
 
     Close($instancia);
@@ -25,7 +25,7 @@ function CrearUsuarioClienteModel($primerNombre, $primerApellido, $segundoApelli
 function VerificarExisteCorreoModel($correoElectronico)
 {
     $instancia = Open();
-    $sentencia = "CALL ValidarCorreo('$correoElectronico');";
+    $sentencia = "CALL ValidarCorreo('$correoElectronico')";
     $resultado = $instancia -> query($sentencia);
 
     Close($instancia);
@@ -35,7 +35,7 @@ function VerificarExisteCorreoModel($correoElectronico)
 function ObtenerUsuariosModel()
 {
     $instancia = Open();
-    $sentencia = "CALL ObtenerUsuarios();";
+    $sentencia = "CALL ObtenerUsuarios()";
     $resultado = $instancia -> query($sentencia);
 
     Close($instancia);
@@ -45,7 +45,7 @@ function ObtenerUsuariosModel()
 function ObtenerUsuarioModel($UsuarioId)
 {
     $instancia = Open();
-    $sentencia = "CALL ObtenerUsuario($UsuarioId);";
+    $sentencia = "CALL ObtenerUsuario($UsuarioId)";
     $resultado = $instancia -> query($sentencia);
 
     Close($instancia);
@@ -55,7 +55,7 @@ function ObtenerUsuarioModel($UsuarioId)
 function EditarUsuarioModel($PrimerNombre, $PrimerApellido, $SegundoApellido, $FechaNacimiento, $Correo, $UsuarioId)
 {
     $instancia = Open();
-    $sentencia = "CALL EditarUsuario('$PrimerNombre', '$PrimerApellido', '$SegundoApellido', $FechaNacimiento, '$Correo', $UsuarioId);";
+    $sentencia = "CALL EditarUsuario('$PrimerNombre', '$PrimerApellido', '$SegundoApellido', $FechaNacimiento, '$Correo', $UsuarioId)";
     $resultado = $instancia -> query($sentencia);
 
     Close($instancia);
@@ -65,7 +65,7 @@ function EditarUsuarioModel($PrimerNombre, $PrimerApellido, $SegundoApellido, $F
 function InactivarUsuarioModel($UsuarioId)
 {
     $instancia = Open();
-    $sentencia = "CALL InactivarUsuario($UsuarioId);";
+    $sentencia = "CALL InactivarUsuario($UsuarioId)";
     $resultado = $instancia -> query($sentencia);
 
     Close($instancia);
@@ -75,7 +75,7 @@ function InactivarUsuarioModel($UsuarioId)
 function ActivarUsuarioModel($UsuarioId)
 {
     $instancia = Open();
-    $sentencia = "CALL ActivarUsuario($UsuarioId);";
+    $sentencia = "CALL ActivarUsuario($UsuarioId)";
     $resultado = $instancia -> query($sentencia);
 
     Close($instancia);

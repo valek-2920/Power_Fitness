@@ -1,5 +1,5 @@
 <?php
-include_once '../Models/usuariosModel.php';
+include_once '../Models/usuarioModel.php';
 
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
@@ -66,9 +66,12 @@ if (isset($_POST["btnRegistrarCuentaCliente"])) {
     $primerNombre = $_POST["primerNombre"];
     $primerApellido = $_POST["primerApellido"];
     $segundoApellido = $_POST["segundoApellido"];
-    $fechaNacimiento = \DateTime::createFromFormat('m/d/Y', $_POST["fechaNacimiento"]);
+    $fechaNacimiento = $_POST["fechaNacimiento"];
     $correoElectronico = $_POST["correoElectronico"];
     $contrasenna = $_POST["contrasenna"];
+
+    $date = new DateTime($fechaNacimiento);
+    $fechaNacimiento = $date->format('Y/m/d');
 
     $resultado = CrearUsuarioClienteModel($primerNombre, $primerApellido, $segundoApellido, $fechaNacimiento, $correoElectronico, $contrasenna);
 

@@ -1,35 +1,75 @@
 <?php
 
+if(session_status() == PHP_SESSION_NONE)
+{
+    session_start();
+}
+
+function MostrarNombreUsuario()
+{
+    if($_SESSION["Correo"] != null)
+    {
+        echo $_SESSION["Correo"] . ' / ' . $_SESSION["Nombre"];;
+    }
+    else
+    {
+        header("location: login.php");
+    }
+}
+
 function navClient()
 {
-  echo '
- <div class="menu" id="menu">
- <div class="container">
-    <div class="logo">
-       <a href="index.php"><img src="/images/logo.png" alt=""/></a>
+    echo '
+    <div class="menu" id="menu">
+    <div class="container">
+       <div class="logo">
+          <a href="index.php"><img src="/images/logo.png" alt=""/></a>
+       </div>
+       <div class="h_menu4"><!-- start h_menu4 -->
+         <a class="toggleMenu" href="#">Menu</a>
+           <ul class="nav">
+             <li class="active"><a href="index.php">Home</a></li>
+             <li><a href="about.php">Acerca</a></li>
+             <li><a href="classes.php">Clases</a></li>
+             <li><a href="blog.php">Blog</a></li>
+             <li><a href="pricing.php">Precio</a></li>
+             <li><a href="contact.php">Contacto</a></li> 
+             <li><a href="profile.php">Cuenta</a></li>
+             <li><a href="../Controllers/CerrarSesionController.php">Cerrar Sesión</a></li>
+         </ul>
+            <script type="text/javascript" src="js/nav.js"></script>
+        </div><!-- end h_menu4 -->
+       <div class="clear"></div>
+       <div class="top_nav">
     </div>
-    <div class="h_menu4"><!-- start h_menu4 -->
-      <a class="toggleMenu" href="#">Menu</a>
-        <ul class="nav">
-          <li class="active"><a href="index.php">Home</a></li>
-          <li><a href="about.php">Acerca</a></li>
-          <li><a href="classes.php">Clases</a>
-              
-          </li>
-          <li><a href="blog.php">Blog</a></li>
-          <li><a href="pricing.php">Precio</a></li>
-          <li><a href="contact.php">Contacto</a></li>
-          <li><a href="profile.php">Cuenta</a></li>
-          <li><a href="../Controllers/CerrarSesionController.php">Cerrar Sesión</a></li>
-          
-      </ul>
-         <script type="text/javascript" src="js/nav.js"></script>
-     </div><!-- end h_menu4 -->
-    <div class="clear"></div>
-    <div class="top_nav">
+   </div>
+    ';
+}
+
+function navLogin(){
+  echo '
+  <div class="menu" id="menu">
+  <div class="container">
+     <div class="logo">
+        <a href="index.php"><img src="/images/logo.png" alt=""/></a>
+     </div>
+     <div class="h_menu4"><!-- start h_menu4 -->
+       <a class="toggleMenu" href="#">Menu</a>
+         <ul class="nav">
+           <li class="active"><a href="index.php">Home</a></li>
+           <li><a href="about.php">Acerca</a></li>
+           <li><a href="classes.php">Clases</a></li>
+           <li><a href="blog.php">Blog</a></li>
+           <li><a href="pricing.php">Precio</a></li>
+           <li><a href="contact.php">Contacto</a></li> 
+       </ul>
+          <script type="text/javascript" src="js/nav.js"></script>
+      </div><!-- end h_menu4 -->
+     <div class="clear"></div>
+     <div class="top_nav">
+  </div>
  </div>
-</div>
- ';
+  ';
 }
 
 function navAdmin()
@@ -48,6 +88,7 @@ function navAdmin()
           <div class="menu_section">
               <ul class="nav side-menu">
                   <li><a href="create_user.php"><i class="fa fa-users"></i> Usuarios</a></li>
+                  <li><a href="roles_index.php"><i class="fa fa-users"></i> Roles</a></li>
               </ul>
           </div>
       </div>
@@ -61,20 +102,14 @@ function navAdmin()
       <nav class="nav navbar-nav">
           <ul class=" navbar-right">
               <li class="nav-item dropdown open" style="padding-left: 15px;">
-                  <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                      User name
+                  <a href="#" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
+                   Opciones Usuario
                   </a>
                   <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="javascript:;"> Perfil</a>
-                      <a class="dropdown-item" href="javascript:;">
-                          <span>Recuperar Contraseña</span>
-                      </a>
-                      <li class="nav-item">
-                      <a class="nav-link collapsed" href="../Controllers/CerrarSesionController.php">
-                          <i class="fas fa-fw fa-door-open"></i>
-                          <span>Cerrar Sesión</span>
-                      </a>
-                  </li>
+                      <a class="dropdown-item" href="#"> Perfil</a>
+                      <a class="dropdown-item" href="#">Recuperar Contraseña</a>
+                      <a class="dropdown-item" href="../Controllers/CerrarSesionController.php">
+                      <span>Cerrar Sesión</span></a>
                   </div>
               </li>
           </ul>

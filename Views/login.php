@@ -14,7 +14,7 @@ include_once '../Controllers/loginController.php';
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Free Gym Website Template | Login :: w3layouts</title>
+<title>Power Fitness | Login </title>
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <link href="css/style.css" rel='stylesheet' type='text/css' />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -27,7 +27,7 @@ include_once '../Controllers/loginController.php';
 <body>
 
 	<?php
-		navClient();
+		navLogin();
 	?>
        <div class="main">
           <div class="login_top">
@@ -62,7 +62,7 @@ include_once '../Controllers/loginController.php';
 						    </p>
 						    <div class="remember">
 							    <p id="login-form-remember">
-							      <label for="modlgn_remember"><a href="#">Has olvidado contraseña? </a></label>
+							      <label for="modlgn_remember"><a href="forgot_password.php">Has olvidado contraseña? </a></label>
 							   </p>
 							   <input type="submit" class="button" value="Iniciar Sesión" disabled
                                         id="btnIniciarSesion" name="btnIniciarSesion">

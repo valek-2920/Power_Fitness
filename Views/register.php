@@ -7,6 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 <?php
 include('utilities.php');
+include_once '../Controllers/usuariosController.php';
 ?>
 
 <!DOCTYPE HTML>
@@ -74,7 +75,7 @@ include('utilities.php');
 	<?php
 	footer();
 	?>
-	<script src="js/funcionesRegistro.js"></script>
+	<script src="js/funciones/funcionesRegistro.js"></script>
 </body>
 
 </html>
