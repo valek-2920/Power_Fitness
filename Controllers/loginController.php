@@ -21,7 +21,7 @@ if(isset($_POST["btnIniciarSesion"]))
         $_SESSION["Nombre"] = $datosResultado["Nombre"];
 
         if($_SESSION["Nombre"] == "Administrador"){
-            header("location: ../Views/admin/index.php");
+            header("location: ../Views/index_admin.php");
 
         }else{
             header("location: ../Views/index.php");
