@@ -7,27 +7,27 @@ if (session_status() == PHP_SESSION_NONE) {
 
 function VerDatosUsuarios()
 {
-    $resultado = ObtenerUsuariosModel($_SESSION["CorreoElectronico"], $_SESSION["TipoUsuario"]);
+    $resultado = ObtenerUsuariosModel();
     if ($resultado->num_rows > 0) {
         while ($datosResultado = mysqli_fetch_array($resultado)) {
-            echo "<tr>";
-            echo "<td>" . $datosResultado["CorreoElectronico"] . "</td>";
-            echo "<td>" . $datosResultado["Identificacion"] . "</td>";
-            echo "<td>" . $datosResultado["Nombre"] . "</td>";
-            echo "<td>" . $datosResultado["DescEstado"] . "</td>";
-            echo "<td>" . $datosResultado["NombreTipoUsuario"] . "</td>";
+            $nombreCompleto = $datosResultado["PrimerNombre"] . " " . $datosResultado["PrimerApellido"] . " " . $datosResultado["SegundoApellido"];
 
-            if ($_SESSION["CorreoElectronico"] == $datosResultado["CorreoElectronico"]) {
-                echo "<td>" . "<a href='../Views/actualizarUsuario.php?q=" . $datosResultado["ConsecutivoUsuario"] . "'>Actualizar</a> | 
+            echo "<tr>";
+            echo "<td>" . $datosResultado["Correo"] . "</td>";
+            echo "<td>" . $nombreCompleto . "</td>";
+            echo "<td>" . $datosResultado["DescEstado"] . "</td>";
+            echo "<td>" . $datosResultado["TipoUsuario"] . "</td>";
+
+            if ($_SESSION["Correo"] == $datosResultado["Correo"]) {
+                echo "<td>" . "<a href='../Views/update_user_admin.php?q=" . $datosResultado["UsuarioId"] . "'>Actualizar</a> | 
                                <a href='#' style='cursor:not-allowed'>Inactivar</a>" . "</td>";
             } else if ($datosResultado["DescEstado"] == "Inactivo") {
-                echo "<td>" . "<a href='../Views/actualizarUsuario.php?q=" . $datosResultado["ConsecutivoUsuario"] . "'>Actualizar</a> | 
-                <a href='#' onclick='ActivarUsuario(" . $datosResultado["ConsecutivoUsuario"] . ");'>Activar</a>" . "</td>";
+                echo "<td>" . "<a href='../Views/update_user_admin.php?q=" . $datosResultado["UsuarioId"] . "'>Actualizar</a> | 
+                <a href='#' onclick='ActivarUsuario(" . $datosResultado["UsuarioId"] . ");'>Activar</a>" . "</td>";
             } else {
-                echo "<td>" . "<a href='../Views/actualizarUsuario.php?q=" . $datosResultado["ConsecutivoUsuario"] . "'>Actualizar</a> | 
-                               <a href='#' onclick='InactivarUsuario(" . $datosResultado["ConsecutivoUsuario"] . ");'>Inactivar</a>" . "</td>";
+                echo "<td>" . "<a href='../Views/update_user_admin.php?q=" . $datosResultado["UsuarioId"] . "'>Actualizar</a> | 
+                               <a href='#' onclick='InactivarUsuario(" . $datosResultado["UsuarioId"] . ");'>Inactivar</a>" . "</td>";
             }
-
             echo "</tr>";
         }
     }
@@ -47,6 +47,16 @@ if (isset($_GET["inactivarUsuario"])) {
 
     if ($resultado) {
         echo "Inactivado";
+    } else {
+        echo "Error";
+    }
+}
+
+if (isset($_GET["activarUsuario"])) {
+    $resultado = ActivarUsuarioModel($_GET["activarUsuario"]);
+
+    if ($resultado) {
+        echo "activado";
     } else {
         echo "Error";
     }

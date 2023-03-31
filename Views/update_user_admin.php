@@ -1,5 +1,8 @@
 <?php
-include('../utilities.php');
+include('utilities.php');
+include_once '../Controllers/usuariosController.php';
+
+$resultado = VerDatosUsuario($_GET["q"]);
 ?>
 
 <!DOCTYPE html>
@@ -13,16 +16,16 @@ include('../utilities.php');
 
     <title>Power Fitness | Usuarios</title>
 
-    <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
-    <link href="../vendors/iCheck/skins/flat/green.css" rel="stylesheet">
-    <link href="../vendors/google-code-prettify/bin/prettify.min.css" rel="stylesheet">
-    <link href="../vendors/select2/dist/css/select2.min.css" rel="stylesheet">
-    <link href="../vendors/switchery/dist/switchery.min.css" rel="stylesheet">
-    <link href="../vendors/starrr/dist/starrr.css" rel="stylesheet">
-    <link href="../vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
-    <link href="../css/custom.min.css" rel="stylesheet">
+    <link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="vendors/nprogress/nprogress.css" rel="stylesheet">
+    <link href="vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+    <link href="vendors/google-code-prettify/bin/prettify.min.css" rel="stylesheet">
+    <link href="vendors/select2/dist/css/select2.min.css" rel="stylesheet">
+    <link href="vendors/switchery/dist/switchery.min.css" rel="stylesheet">
+    <link href="vendors/starrr/dist/starrr.css" rel="stylesheet">
+    <link href="vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+    <link href="css/custom.min.css" rel="stylesheet">
 </head>
 
 <body class="nav-md">
@@ -35,7 +38,7 @@ include('../utilities.php');
                 <div class="">
                     <div class="page-title">
                         <div class="title_left">
-                            <h3>Crear Usuario</h3>
+                            <h3>Actualizar Usuario</h3>
                         </div>
                     </div>
                     <div class="clearfix"></div>
@@ -68,12 +71,6 @@ include('../utilities.php');
                                             <label class="col-form-label col-md-3 col-sm-3 label-align">Correo <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6 ">
                                                 <input type="email" required="required" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="item form-group">
-                                            <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Contraseña <span class="required">*</span></label>
-                                            <div class="col-md-6 col-sm-6 ">
-                                                <input class="form-control" required="required" type="password">
                                             </div>
                                         </div>
                                         <div class="item form-group">
@@ -165,25 +162,25 @@ include('../utilities.php');
         </div>
     </div>
 
-    <script src="../vendors/jquery/dist/jquery.min.js"></script>
-    <script src="../vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../vendors/fastclick/lib/fastclick.js"></script>
-    <script src="../vendors/nprogress/nprogress.js"></script>
-    <script src="../vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
-    <script src="../vendors/iCheck/icheck.min.js"></script>
-    <script src="../vendors/moment/min/moment.min.js"></script>
-    <script src="../vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
-    <script src="../vendors/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js"></script>
-    <script src="../vendors/jquery.hotkeys/jquery.hotkeys.js"></script>
-    <script src="../vendors/google-code-prettify/src/prettify.js"></script>
-    <script src="../vendors/jquery.tagsinput/src/jquery.tagsinput.js"></script>
-    <script src="../vendors/switchery/dist/switchery.min.js"></script>
-    <script src="../vendors/select2/dist/js/select2.full.min.js"></script>
-    <script src="../vendors/parsleyjs/dist/parsley.min.js"></script>
-    <script src="../vendors/autosize/dist/autosize.min.js"></script>
-    <script src="../vendors/devbridge-autocomplete/dist/jquery.autocomplete.min.js"></script>
-    <script src="../vendors/starrr/dist/starrr.js"></script>
-    <script src="../js/custom.min.js"></script>
+    <script src="vendors/jquery/dist/jquery.min.js"></script>
+    <script src="vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="vendors/fastclick/lib/fastclick.js"></script>
+    <script src="vendors/nprogress/nprogress.js"></script>
+    <script src="vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+    <script src="vendors/iCheck/icheck.min.js"></script>
+    <script src="vendors/moment/min/moment.min.js"></script>
+    <script src="vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script src="vendors/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js"></script>
+    <script src="vendors/jquery.hotkeys/jquery.hotkeys.js"></script>
+    <script src="vendors/google-code-prettify/src/prettify.js"></script>
+    <script src="vendors/jquery.tagsinput/src/jquery.tagsinput.js"></script>
+    <script src="vendors/switchery/dist/switchery.min.js"></script>
+    <script src="vendors/select2/dist/js/select2.full.min.js"></script>
+    <script src="vendors/parsleyjs/dist/parsley.min.js"></script>
+    <script src="vendors/autosize/dist/autosize.min.js"></script>
+    <script src="vendors/devbridge-autocomplete/dist/jquery.autocomplete.min.js"></script>
+    <script src="vendors/starrr/dist/starrr.js"></script>
+    <script src="js/custom.min.js"></script>
 
 </body>
 
