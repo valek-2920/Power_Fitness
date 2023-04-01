@@ -102,7 +102,7 @@ function footer()
      <div class="f-logo">
        <img src="/images/logo.png" alt=""/>
      </div>
-     <p class="m_9">Ubicado en ...</p>
+     <p class="m_9">Ubicado en San Miguel, Santo Domingo, Heredia, Costa Rica</p>
      <p class="address">Phone : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="m_10">(506) 8888 8888</span></p>
      <p class="address">Email : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="m_10">info@powerfitness.com</span></p>
    </div>
