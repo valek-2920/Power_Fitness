@@ -47,7 +47,7 @@ include '../Controllers/usuariosController.php';
                                 </a>
                                 <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="#"> Perfil</a>
-                                    <a class="dropdown-item" href="#">Recuperar Contraseña</a>
+                                    <a class="dropdown-item" href="forgot_password_admin.php">Recuperar Contraseña</a>
                                     <a class="dropdown-item" href="../Controllers/CerrarSesionController.php">
                                         <span>Cerrar Sesión</span></a>
                                 </div>

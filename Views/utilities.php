@@ -56,12 +56,7 @@ function navLogin(){
      <div class="h_menu4"><!-- start h_menu4 -->
        <a class="toggleMenu" href="#">Menu</a>
          <ul class="nav">
-           <li class="active"><a href="index.php">Home</a></li>
-           <li><a href="about.php">Acerca</a></li>
-           <li><a href="classes.php">Clases</a></li>
-           <li><a href="blog.php">Blog</a></li>
-           <li><a href="pricing.php">Precio</a></li>
-           <li><a href="contact.php">Contacto</a></li> 
+
        </ul>
           <script type="text/javascript" src="js/nav.js"></script>
       </div><!-- end h_menu4 -->
