@@ -16,7 +16,7 @@ function VerDatosUsuarios()
             echo "<td>" . $datosResultado["Correo"] . "</td>";
             echo "<td>" . $nombreCompleto . "</td>";
             echo "<td>" . $datosResultado["DescEstado"] . "</td>";
-            echo "<td>" . $datosResultado["TipoUsuario"] . "</td>";
+            echo "<td>" . $datosResultado["Nombre"] . "</td>";
 
             if ($_SESSION["Correo"] == $datosResultado["Correo"]) {
                 echo "<td>" . "<a href='../Views/update_user_admin.php?q=" . $datosResultado["UsuarioId"] . "'>Actualizar</a> | 
@@ -117,27 +117,27 @@ if (isset($_POST["btnRecuperarCuenta"])) {
     if ($resultado->num_rows > 0) {
         $datosResultado = mysqli_fetch_array($resultado);
 
-        $mensaje = "La contraseña de su cuenta es: " . $datosResultado["Contrasenna"];
-        EnviarCorreo($datosResultado["CorreoElectronico"], 'Recuperación de contraseña', $mensaje, null);
+        $mensaje = "La contraseña de su cuenta es: " . $datosResultado["contrasenna"];
+        EnviarCorreo($datosResultado["correo"], 'Recuperación de contraseña', $mensaje, null);
     }
 }
 
-// // if (isset($_POST["btnNotificar"])) {
-// //     $correoElectronico = $_POST["correoElectronico"];
-// //     $nombreAdjunto = "../Files/" . $_FILES["adjunto"]["name"];
-// //     move_uploaded_file($_FILES["adjunto"]["tmp_name"], $nombreAdjunto);
+if (isset($_POST["btnNotificar"])) {
+    $correoElectronico = $_POST["correoElectronico"];
+    $nombreAdjunto = "../Files/" . $_FILES["adjunto"]["name"];
+    move_uploaded_file($_FILES["adjunto"]["tmp_name"], $nombreAdjunto);
 
-// //     EnviarCorreo($correoElectronico, 'Practica 2', 'Por favor revise el archivo adjunto', $nombreAdjunto);
-// //     unlink($nombreAdjunto);
-// // }
+    EnviarCorreo($correoElectronico, 'Practica 2', 'Por favor revise el archivo adjunto', $nombreAdjunto);
+    unlink($nombreAdjunto);
+}
 
 function EnviarCorreo($destinatario, $asunto, $cuerpo, $pdf)
 {
     require '../PHPMailer/src/PHPMailer.php';
     require '../PHPMailer/src/SMTP.php';
 
-    $correoSalida = "@hotmail.com";
-    $contrasennaSalida = "";
+    $correoSalida = "fitnesspower725@outlook.com";
+    $contrasennaSalida = "TheRedPandas#074";
 
     $mail = new PHPMailer();
     $mail->CharSet = 'UTF-8';
@@ -150,7 +150,7 @@ function EnviarCorreo($destinatario, $asunto, $cuerpo, $pdf)
     $mail->Username = $correoSalida;
     $mail->Password = $contrasennaSalida;
 
-    $mail->SetFrom($correoSalida, "Sistema Profesores");
+    $mail->SetFrom($correoSalida, "Power Fitness");
     $mail->Subject = $asunto;
     $mail->MsgHTML($cuerpo);
     $mail->AddAddress($destinatario, 'Usuario Sistema');
