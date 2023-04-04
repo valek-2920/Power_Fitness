@@ -77,7 +77,7 @@ include('utilities.php');
 							<h4>Primer día de entrenamiento</h4>
 							<h3>Gratis</h3>
 							<ul class="price_list">
-								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">soluta nobis eleifend</a></p>
+								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">.</a></p>
 								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">soluta nobis eleifend</a></p>
 								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">soluta nobis eleifend</a></p>
 								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">soluta nobis eleifend</a></p>
