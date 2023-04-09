@@ -56,12 +56,7 @@ function navLogin(){
      <div class="h_menu4"><!-- start h_menu4 -->
        <a class="toggleMenu" href="#">Menu</a>
          <ul class="nav">
-           <li class="active"><a href="index.php">Home</a></li>
-           <li><a href="about.php">Acerca</a></li>
-           <li><a href="classes.php">Clases</a></li>
-           <li><a href="blog.php">Blog</a></li>
-           <li><a href="pricing.php">Precio</a></li>
-           <li><a href="contact.php">Contacto</a></li> 
+
        </ul>
           <script type="text/javascript" src="js/nav.js"></script>
       </div><!-- end h_menu4 -->
@@ -107,7 +102,7 @@ function footer()
      <div class="f-logo">
        <img src="/images/logo.png" alt=""/>
      </div>
-     <p class="m_9">Ubicado en ...</p>
+     <p class="m_9">Ubicado en San Miguel, Santo Domingo, Heredia, Costa Rica</p>
      <p class="address">Phone : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="m_10">(506) 8888 8888</span></p>
      <p class="address">Email : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="m_10">info@powerfitness.com</span></p>
    </div>

@@ -7,13 +7,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 <?php
 include('utilities.php');
+include '../Controllers/usuariosController.php';
 ?>
 
 <!DOCTYPE HTML>
 <html>
 
 <head>
-    <title>Free Gym Website Template | Perfil</title>
+    <title>Power Fitness | Recuperar Contraseña</title>
     <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -33,7 +34,7 @@ include('utilities.php');
             <div class="container">
                 <form action="" method="post">
                     <div class="register-top-grid">
-                        <h2>Por favor digita tu correo electronico para obtener un correo de recuperación de contraseña</h2>
+                        <h2>Por favor digite su correo electronico para obtener un correo de recuperación de contraseña</h2>
                         <div>
                             <p>Correo Electronico<label>*</label></p>
                             <input type="email" id="correoElectronico" name="correoElectronico" required onkeyup="HabilitarBoton();">
