@@ -77,12 +77,12 @@ include('utilities.php');
 							<h4>Primer día de entrenamiento</h4>
 							<h3>Gratis</h3>
 							<ul class="price_list">
-								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">.</a></p>
-								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">.</a></p>
-								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">soluta nobis eleifend</a></p>
-								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">soluta nobis eleifend</a></p>
+								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">Acceso al los equipos de ejercicio</a></p>
+								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">1 bebida de proteina por visita</a></p>
+								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">rutina semanal </a></p>
+							
 								<a class="popup-with-zoom-anim" href="#small-dialog">
-									<li class="price_but">Buy Now</li>
+								<li class="price_but">Pagar ahora</li>
 								</a>
 								<!-----pop-up-grid---->
 								<div id="small-dialog" class="mfp-hide">
@@ -151,13 +151,13 @@ include('utilities.php');
 							<h4>Membresía de tres meses</h4>
 							<h2 class="m_25">$33</h2>
 							<ul class="price_list">
-								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">soluta nobis eleifend</a></p>
-								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">soluta nobis eleifend</a></p>
-								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">soluta nobis eleifend</a></p>
-								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">soluta nobis eleifend</a></p>
-								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">soluta nobis eleifend</a></p>
+								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">Acceso al los equipos de ejercicio</a></p>
+								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">1 bebida de proteina por visita</a></p>
+								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">rutina semanal</a></p>
+								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">Recomendacion calorica</a></p>
+								
 								<a class="popup-with-zoom-anim" href="#small-dialog">
-									<li class="price_but">Buy Now</li>
+								<li class="price_but">Pagar ahora</li>
 								</a>
 								<div class="clear"></div>
 							</ul>
@@ -168,13 +168,13 @@ include('utilities.php');
 							<h4>Membresía de seis meses</h4>
 							<h2 class="m_25">$59</h2>
 							<ul class="price_list">
-								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">soluta nobis eleifend</a></p>
-								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">soluta nobis eleifend</a></p>
-								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">soluta nobis eleifend</a></p>
-								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">soluta nobis eleifend</a></p>
-								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">soluta nobis eleifend</a></p>
+							    <p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">Acceso al los equipos de ejercicio</a></p>
+								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">1 bebida de proteina por visita</a></p>
+								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">rutina semanal</a></p>
+								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">Recomendacion calorica</a></p>
+								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">Servicio de nutricionista </a></p>
 								<a class="popup-with-zoom-anim" href="#small-dialog">
-									<li class="price_but">Buy Now</li>
+								<li class="price_but">Pagar ahora</li>
 								</a>
 								<div class="clear"></div>
 							</ul>
@@ -185,13 +185,14 @@ include('utilities.php');
 							<h4>Membresía de un año</h4>
 							<h2 class="m_25">$120<small>.00</small></h2>
 							<ul class="price_list">
-								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">soluta nobis eleifend</a></p>
-								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">soluta nobis eleifend</a></p>
-								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">soluta nobis eleifend</a></p>
-								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">soluta nobis eleifend</a></p>
-								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">soluta nobis eleifend</a></p>
+							<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">Acceso al los equipos de ejercicio</a></p>
+								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">1 bebida de proteina por visita</a></p>
+								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">rutina semanal</a></p>
+								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">Recomendacion calorica</a></p>
+								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">Servicio de nutricionista </a></p>
+								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">Entrenador presonal 2 veses por semana</a></p>
 								<a class="popup-with-zoom-anim" href="#small-dialog">
-									<li class="price_but">Buy Now</li>
+									<li class="price_but">Pagar ahora</li>
 								</a>
 								<div class="clear"></div>
 							</ul>
