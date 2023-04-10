@@ -170,7 +170,7 @@ include('utilities.php');
 							<ul class="price_list">
 							    <p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">Acceso al los equipos de ejercicio</a></p>
 								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">1 bebida de proteina por visita</a></p>
-								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">rutina semanal</a></p>
+								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">Rutina semanal</a></p>
 								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">Recomendacion calorica</a></p>
 								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">Servicio de nutricionista </a></p>
 								<a class="popup-with-zoom-anim" href="#small-dialog">
