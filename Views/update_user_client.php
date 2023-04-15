@@ -7,17 +7,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 <?php
 include('utilities.php');
-include '../Controllers/usuariosController.php';
 ?>
 
 <!DOCTYPE HTML>
 <html>
 
 <head>
-	<title>Power Fitness | Perfil</title>
+	<title>Power Fitness | Actualizar Datos</title>
 	<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 	<link href="css/style.css" rel='stylesheet' type='text/css' />
-	<link href="css/profile_style.css" rel='stylesheet' type='text/css' />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
@@ -30,28 +28,8 @@ include '../Controllers/usuariosController.php';
 	<?php
 	navClient();
 	?>
-	<div class="padding">
-		<div class="col-md-8">
-			<div class="card-body little-profile text-center">
-				<?php
-				mostrarFotoPerfil();
-				?>
-				<h3 class="m-b-0"><?php echo $_SESSION["NombreUsuario"]; ?></h3>
-				<div class="row text-center m-t-20">
-					<div class="col-lg-4 col-md-4 m-t-20">
-						<a href="update_user_client.php">Actualizar Datos Personales</a>
-					</div>
-					<div class="col-lg-4 col-md-4 m-t-20">
-						<a href="#">Ver Estadística</a>
-					</div>
-					<div class="col-lg-4 col-md-4 m-t-20">
-						<a href="#">Ver Datos Membresía</a>
-					</div>
-					<div class="col-lg-4 col-md-4 m-t-20">
-						<a href="forgot_password.php">Recuperar Contraseña</a>
-					</div>
-				</div>
-			</div>
+	<div class="main">
+
 		</div>
 	</div>
 	<?php

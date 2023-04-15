@@ -19,6 +19,8 @@ if(isset($_POST["btnIniciarSesion"]))
         $_SESSION["Correo"] = $datosResultado["Correo"];
         $_SESSION["RolId"] = $datosResultado["RolId"];
         $_SESSION["Nombre"] = $datosResultado["Nombre"];
+        $_SESSION["NombreUsuario"] = $datosResultado["PrimerNombre"] . " " . $datosResultado["PrimerApellido"] . " " . $datosResultado["SegundoApellido"];
+        $_SESSION["Genero"] = $datosResultado["Genero"];
 
         if($_SESSION["Nombre"] == "Administrador"){
             header("location: ../Views/index_admin.php");

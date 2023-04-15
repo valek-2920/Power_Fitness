@@ -130,6 +130,21 @@ function footer()
   </div>
   ';
 }
+function footerLogin()
+{
+  echo '
+  <div class="footer-bottom">
+	<div class="copyright">
+		<div class="container">
+			<div class="copy">
+				<p>© 2014 Template by <a href="http://w3layouts.com" target="_blank"> w3layouts</a></p>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+</div>
+  ';
+}
 
 function footerAdmin()
 {

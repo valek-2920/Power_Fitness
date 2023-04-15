@@ -1,3 +1,22 @@
+.profile-options div{
+	width: 48%;
+	float: left;
+	margin: 12px 0;
+	margin-left: 21px;
+}
+
+.profile-options a{
+	width: 48%;
+	float: left;
+	margin: 12px 0;
+	margin-left: 21px;
+}
+
+.profile-options div{
+	width: 100%;
+	float: none;
+}
+
 .clear{clear: both;}
 html, body{
 	font-family: 'Open Sans', sans-serif;

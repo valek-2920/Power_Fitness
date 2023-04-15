@@ -33,6 +33,15 @@ function VerDatosUsuarios()
     }
 }
 
+function mostrarFotoPerfil()
+{
+    if ($_SESSION["Genero"] == 'M') {
+        echo '<div class="pro-img"><img src="images/male_icon.png" alt="user"></div>';
+    } else {
+        echo '<div class="pro-img"><img src="images/woman_icon.png" alt="user"></div>';
+    }
+}
+
 
 function VerDatosUsuario($consecutivoUsuario)
 {
