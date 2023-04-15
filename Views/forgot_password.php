@@ -27,16 +27,16 @@ include '../Controllers/usuariosController.php';
 <body>
 
     <?php
-    navClient();
+    navLogin();
     ?>
     <div class="main">
-        <div class="register-grids">
+        <div class="register-grids" style="padding-bottom:23rem;">
             <div class="container">
                 <form action="" method="post">
-                    <div class="register-top-grid">
-                        <h2>Por favor digite su correo electronico para obtener un correo de recuperación de contraseña</h2>
+                    <div class="register-top-grid" >
+                        <h2>Por favor digite su correo electrónico para obtener un correo de recuperación de contraseña</h2>
                         <div>
-                            <p>Correo Electronico<label>*</label></p>
+                            <p>Correo Electrónico<label>*</label></p>
                             <input type="email" id="correoElectronico" name="correoElectronico" required onkeyup="HabilitarBoton();">
                         </div>
                         <div class="clear"> </div>
@@ -48,7 +48,7 @@ include '../Controllers/usuariosController.php';
         </div>
     </div>
     <?php
-    footer();
+    footerLogin();
     ?>
     <script src="js/funciones/funcionesRecuperarUsuario.js"></script>
 </body>

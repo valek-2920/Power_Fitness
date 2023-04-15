@@ -27,7 +27,7 @@ include_once '../Controllers/usuariosController.php';
 <body>
 
 	<?php
-	navClient();
+	navLogin();
 	?>
 
 	<div class="main">
@@ -73,7 +73,7 @@ include_once '../Controllers/usuariosController.php';
 		</div>
 	</div>
 	<?php
-	footer();
+	footerLogin();
 	?>
 	<script src="js/funciones/funcionesRegistro.js"></script>
 </body>
