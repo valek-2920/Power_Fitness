@@ -3,7 +3,7 @@ include('utilities.php');
 include_once '../Controllers/usuariosController.php';
 
 $resultado = VerDatosUsuario($_GET["q"]);
-?>
+$DireccionDatos = explode(', ', $resultado["Direccion"]); ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -47,70 +47,64 @@ $resultado = VerDatosUsuario($_GET["q"]);
                             <div class="x_panel">
                                 <div class="x_content">
                                     <br />
-                                    <form data-parsley-validate class="form-horizontal form-label-left">
-
+                                    <form action="" method="post" class="form-horizontal form-label-left">
+                                        <input type="hidden" id="usuarioId" name="usuarioId" value="<?php echo $resultado["UsuarioId"] ?>">
                                         <div class="item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3 label-align">Primer Nombre <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6 ">
-                                                <input type="text" required="required" class="form-control ">
+                                                <input type="text" id="primerNombre" name="primerNombre" required class="form-control" value="<?php echo $resultado["PrimerNombre"] ?>">
                                             </div>
                                         </div>
                                         <div class="item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3 label-align">Primer Apellido <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6 ">
-                                                <input type="text" required="required" class="form-control ">
+                                                <input type="text" id="primerApellido" name="primerApellido" required class="form-control" value="<?php echo $resultado["PrimerApellido"] ?>">
                                             </div>
                                         </div>
                                         <div class="item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3 label-align">Segundo Apellido <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6 ">
-                                                <input type="text" required="required" class="form-control ">
+                                                <input type="text" id="segundoApellido" name="segundoApellido" required class="form-control" value="<?php echo $resultado["SegundoApellido"] ?>">
                                             </div>
                                         </div>
                                         <div class="item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3 label-align">Correo <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6 ">
-                                                <input type="email" required="required" class="form-control">
+                                                <input type="email" id="correoElectronico" name="correoElectronico" readonly="True" required class="form-control" value="<?php echo $resultado["Correo"] ?>">
                                             </div>
                                         </div>
                                         <div class="item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3 label-align">Genero</label>
+                                            <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Contraseña <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6 ">
-                                                <div id="gender" class="btn-group" data-toggle="buttons">
-                                                    <label class="btn btn-secondary" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-                                                        <input type="radio" name="gender" value="Masculino" class="join-btn"> &nbsp; Masculino &nbsp;
-                                                    </label>
-                                                    <label class="btn btn-primary" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-                                                        <input type="radio" name="gender" value="Femenino" class="join-btn"> Femenino
-                                                    </label>
-                                                </div>
+                                                <input class="form-control" id="contrasenna" name="contrasenna" required type="password" >
+                                            </div>
+                                        </div>
+                                        <div class="item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3 label-align">Genero <span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-6 ">
+                                                <select id="genero" name="genero" class="form-control" required value="<?php echo $resultado["Genero"] ?>">
+                                                    <option value="M">Masculino</option>
+                                                    <option value="F">Femenino</option>
+                                                </select>
                                             </div>
                                         </div>
                                         <div class="item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3 label-align">Fecha Nacimiento <span class="required">*</span>
                                             </label>
                                             <div class="col-md-6 col-sm-6 ">
-                                                <input id="birthday" class="date-picker form-control" placeholder="dd-mm-yyyy" type="text" required="required" type="text" onfocus="this.type='date'" onmouseover="this.type='date'" onclick="this.type='date'" onblur="this.type='text'" onmouseout="timeFunctionLong(this)">
-                                                <script>
-                                                    function timeFunctionLong(input) {
-                                                        setTimeout(function() {
-                                                            input.type = 'text';
-                                                        }, 60000);
-                                                    }
-                                                </script>
+                                                <input type="date" id="fechaNacimiento" name="fechaNacimiento" class="date-picker form-control" value="<?php echo $resultado["FechaNacimiento"] ?>">
                                             </div>
                                         </div>
                                         <div class="item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3 label-align">Celular <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6 ">
-                                                <input type="text" required="required" class="form-control ">
+                                                <input type="number" id="celular" name="celular" required class="form-control" value="<?php echo $resultado["Celular"] ?>">
                                             </div>
                                         </div>
                                         <div class="item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3 label-align">Provincia <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6 ">
-                                                <select id="heard" class="form-control" required>
-                                                    <option value="">***Seleccionar Provincia***</option>
+                                                <select id="provincia" name="provincia" class="form-control" required value="<?php echo $DireccionDatos[0] ?>">
                                                     <option value="San José">San José</option>
                                                     <option value="Alajuela">Alajuela</option>
                                                     <option value="Cartago">Cartago</option>
@@ -124,31 +118,21 @@ $resultado = VerDatosUsuario($_GET["q"]);
                                         <div class="item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3 label-align">Ciudad <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6 ">
-                                                <input type="text" required="required" class="form-control ">
+                                                <input type="text" id="ciudad" name="ciudad" required class="form-control" value="<?php echo $DireccionDatos[1] ?>">
                                             </div>
                                         </div>
-                                        <div class="item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3 label-align">Codigo Postal <span class="required">*</span></label>
-                                            <div class="col-md-6 col-sm-6 ">
-                                                <input type="text" required="required" class="form-control ">
-                                            </div>
-                                        </div>
-
                                         <div class="item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3 label-align">Dirección Exacta <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6 ">
-                                                <input type="text" required="required" class="form-control">
+                                                <input type="text" id="direccionExacta" name="direccionExacta" required class="form-control" value="<?php echo $DireccionDatos[2] ?>">
                                             </div>
                                         </div>
-
                                         <div class="ln_solid"></div>
                                         <div class="item form-group">
                                             <div class="col-md-6 col-sm-6 offset-md-3">
-                                                <button class="btn btn-danger" type="button">Cancelar</button>
-                                                <button type="submit" class="btn btn-primary">Crear</button>
+                                                <input class="btn btn-primary" type="submit" value="Actualizar Cuenta" id="btnActualizarUsuarioAdmin" name="btnActualizarUsuarioAdmin">
                                             </div>
                                         </div>
-
                                     </form>
                                 </div>
                             </div>
