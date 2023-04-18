@@ -125,7 +125,7 @@ if (isset($_POST["btnRegistrarCuenta"])) {
     $fechaNacimiento = $date->format('Y/m/d');
 
     $resultado = CrearUsuarioAdministradorModel($primerNombre, $primerApellido, $segundoApellido, $fechaNacimiento, $genero, $celular, $direccion, $correoElectronico, $contrasenna);
-    
+
     if ($resultado == true) {
         header("location: ../Views/index_admin.php");
         echo '<script type="text/javascript">
@@ -139,19 +139,47 @@ if (isset($_POST["btnRegistrarCuenta"])) {
     }
 }
 
-if (isset($_POST["btnActualizarUsuario"])) {
+if (isset($_POST["btnActualizarUsuarioCliente"])) {
+    $usuarioId = $_POST["usuarioId"];
     $primerNombre = $_POST["primerNombre"];
     $primerApellido = $_POST["primerApellido"];
     $segundoApellido = $_POST["segundoApellido"];
-    $genero = $_POST["genero"];
     $fechaNacimiento = $_POST["fechaNacimiento"];
-    $correoElectronico = $_POST["correoElectronico"];
-    $contrasenna = $_POST["contrasenna"];
+    $genero = $_POST["genero"];
+    $celular = $_POST["celular"];
+    $direccion = $_POST["provincia"] . ", " . $_POST["ciudad"] . ", " . $_POST["direccionExacta"];
 
-    $resultado = EditarUsuarioModel($PrimerNombre, $PrimerApellido, $SegundoApellido, $FechaNacimiento, $Correo, $UsuarioId);
+    $date = new DateTime($fechaNacimiento);
+    $fechaNacimiento = $date->format('Y/m/d');
+
+    $resultado = EditarUsuarioModelCiente($primerNombre, $primerApellido, $segundoApellido, $fechaNacimiento, $genero, $celular, $direccion, $usuarioId);
 
     if ($resultado == true) {
-        header("location: ../Views/usuarios.php");
+        $_SESSION["NombreUsuario"] = $primerNombre . " " . $primerApellido . " " . $segundoApellido;
+        header("location: ../Views/profile.php");
+    } else {
+        echo "No se pudo actualizar la información";
+    }
+}
+
+if (isset($_POST["btnActualizarUsuarioAdmin"])) {
+    $usuarioId = $_POST["usuarioId"];
+    $primerNombre = $_POST["primerNombre"];
+    $primerApellido = $_POST["primerApellido"];
+    $segundoApellido = $_POST["segundoApellido"];
+    $fechaNacimiento = $_POST["fechaNacimiento"];
+    $genero = $_POST["genero"];
+    $celular = $_POST["celular"];
+    $direccion = $_POST["provincia"] . ", " . $_POST["ciudad"] . ", " . $_POST["direccionExacta"];
+    $contrasenna = $_POST["contrasenna"];
+
+    $date = new DateTime($fechaNacimiento);
+    $fechaNacimiento = $date->format('Y/m/d');
+
+    $resultado = EditarUsuarioModelAdmin($primerNombre, $primerApellido, $segundoApellido, $fechaNacimiento, $genero, $celular, $direccion, $contrasenna, $usuarioId);
+
+    if ($resultado == true) {
+        header("location: ../Views/index_admin.php");
     } else {
         echo "No se pudo actualizar la información";
     }
@@ -207,25 +235,4 @@ function EnviarCorreo($destinatario, $asunto, $cuerpo, $pdf)
     }
 
     $mail->send();
-}
-function VerPerfiles($TipoUsuario)
-{
-    $resultado = VerPerfilesModel();
-    if ($resultado->num_rows > 0) {
-        if ($TipoUsuario == 1) {
-            while ($datosResultado = mysqli_fetch_array($resultado)) {
-                if ($TipoUsuario == $datosResultado["TipoUsuario"]) {
-                    echo "<option value=" . $datosResultado["TipoUsuario"] . " selected>" . $datosResultado["NombreTipoUsuario"] . "</option>";
-                } else {
-                    echo "<option value=" . $datosResultado["TipoUsuario"] . ">" . $datosResultado["NombreTipoUsuario"] . "</option>";
-                }
-            }
-        } else {
-            while ($datosResultado = mysqli_fetch_array($resultado)) {
-                if ($TipoUsuario == $datosResultado["TipoUsuario"]) {
-                    echo "<option value=" . $datosResultado["TipoUsuario"] . " selected>" . $datosResultado["NombreTipoUsuario"] . "</option>";
-                }
-            }
-        }
-    }
 }

@@ -17,7 +17,7 @@ if(isset($_POST["btnIniciarSesion"]))
     {
         $datosResultado = mysqli_fetch_array($resultado);
         $_SESSION["Correo"] = $datosResultado["Correo"];
-        $_SESSION["RolId"] = $datosResultado["RolId"];
+        $_SESSION["UsuarioId"] = $datosResultado["UsuarioId"];
         $_SESSION["Nombre"] = $datosResultado["Nombre"];
         $_SESSION["NombreUsuario"] = $datosResultado["PrimerNombre"] . " " . $datosResultado["PrimerApellido"] . " " . $datosResultado["SegundoApellido"];
         $_SESSION["Genero"] = $datosResultado["Genero"];

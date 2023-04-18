@@ -52,10 +52,19 @@ function ObtenerUsuarioModel($UsuarioId)
     return $resultado;
 }
 
-function EditarUsuarioModel($PrimerNombre, $PrimerApellido, $SegundoApellido, $FechaNacimiento, $Correo, $UsuarioId)
+function EditarUsuarioModelCiente($primerNombre, $primerApellido, $segundoApellido, $fechaNacimiento, $genero, $celular, $direccion, $usuarioId)
 {
     $instancia = Open();
-    $sentencia = "CALL EditarUsuario('$PrimerNombre', '$PrimerApellido', '$SegundoApellido', $FechaNacimiento, '$Correo', $UsuarioId)";
+    $sentencia = "CALL EditarUsuarioCliente('$primerNombre', '$primerApellido', '$segundoApellido', '$fechaNacimiento', '$genero', $celular, '$direccion', $usuarioId)";
+    $resultado = $instancia->query($sentencia);
+
+    Close($instancia);
+    return $resultado;
+}
+function EditarUsuarioModelAdmin($primerNombre, $primerApellido, $segundoApellido, $fechaNacimiento, $genero, $celular, $direccion, $contrasenna, $usuarioId)
+{
+    $instancia = Open();
+    $sentencia = "CALL EditarUsuarioAdmin('$primerNombre', '$primerApellido', '$segundoApellido', '$fechaNacimiento', '$genero', $celular, '$direccion', '$contrasenna', $usuarioId)";
     $resultado = $instancia->query($sentencia);
 
     Close($instancia);
@@ -76,30 +85,6 @@ function ActivarUsuarioModel($UsuarioId)
 {
     $instancia = Open();
     $sentencia = "CALL ActivarUsuario($UsuarioId)";
-    $resultado = $instancia->query($sentencia);
-
-    Close($instancia);
-    return $resultado;
-}
-
-function generadorContrasenna()
-{
-    $length = 12;
-    $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-    $count = mb_strlen($chars);
-
-    for ($i = 0, $result = ''; $i < $length; $i++) {
-        $index = rand(0, $count - 1);
-        $result .= mb_substr($chars, $index, 1);
-    }
-
-    return $result;
-}
-
-function VerPerfilesModel()
-{
-    $instancia = Open();
-    $sentencia = "CALL VerPerfiles();";
     $resultado = $instancia->query($sentencia);
 
     Close($instancia);

@@ -39,7 +39,7 @@ include '../Controllers/usuariosController.php';
 				<h3 class="m-b-0"><?php echo $_SESSION["NombreUsuario"]; ?></h3>
 				<div class="row text-center m-t-20">
 					<div class="col-lg-4 col-md-4 m-t-20">
-						<a href="update_user_client.php">Actualizar Datos Personales</a>
+						<a href="update_user_client.php?q=<?php echo $_SESSION["UsuarioId"] ?>">Actualizar Datos Personales</a>
 					</div>
 					<div class="col-lg-4 col-md-4 m-t-20">
 						<a href="#">Ver Estadística</a>
