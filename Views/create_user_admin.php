@@ -1,5 +1,6 @@
 <?php
 include('utilities.php');
+include_once '../Controllers/usuariosController.php';
 ?>
 
 <!DOCTYPE html>
@@ -10,9 +11,7 @@ include('utilities.php');
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>Power Fitness | Usuarios</title>
-
     <link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="vendors/nprogress/nprogress.css" rel="stylesheet">
@@ -44,76 +43,69 @@ include('utilities.php');
                             <div class="x_panel">
                                 <div class="x_content">
                                     <br />
-                                    <form data-parsley-validate class="form-horizontal form-label-left">
-
+                                    <form action="" method="post" class="form-horizontal form-label-left">
                                         <div class="item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3 label-align">Primer Nombre <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6 ">
-                                                <input type="text" required="required" class="form-control ">
+                                                <input type="text" id="primerNombre" name="primerNombre" required class="form-control ">
                                             </div>
                                         </div>
                                         <div class="item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3 label-align">Primer Apellido <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6 ">
-                                                <input type="text" required="required" class="form-control ">
+                                                <input type="text" id="primerApellido" name="primerApellido" required class="form-control ">
                                             </div>
                                         </div>
                                         <div class="item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3 label-align">Segundo Apellido <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6 ">
-                                                <input type="text" required="required" class="form-control ">
+                                                <input type="text" id="segundoApellido" name="segundoApellido" required class="form-control ">
                                             </div>
                                         </div>
                                         <div class="item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3 label-align">Correo <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6 ">
-                                                <input type="email" required="required" class="form-control">
+                                                <input type="email" id="correoElectronico" name="correoElectronico" required class="form-control" onkeyup="HabilitarBoton();">
                                             </div>
                                         </div>
                                         <div class="item form-group">
                                             <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Contraseña <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6 ">
-                                                <input class="form-control" required="required" type="password">
+                                                <input class="form-control" id="contrasenna" name="contrasenna" required type="password" onkeyup="HabilitarBoton();">
                                             </div>
                                         </div>
                                         <div class="item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3 label-align">Genero</label>
+                                            <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Confirmar Contraseña <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6 ">
-                                                <div id="gender" class="btn-group" data-toggle="buttons">
-                                                    <label class="btn btn-secondary" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-                                                        <input type="radio" name="gender" value="Masculino" class="join-btn"> &nbsp; Masculino &nbsp;
-                                                    </label>
-                                                    <label class="btn btn-primary" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-                                                        <input type="radio" name="gender" value="Femenino" class="join-btn"> Femenino
-                                                    </label>
-                                                </div>
+                                                <input class="form-control" id="confirmarContrasenna" name="confirmarContrasenna" required type="password" onkeyup="HabilitarBoton();">
+                                            </div>
+                                        </div>
+                                        <div class="item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3 label-align">Genero <span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-6 ">
+                                                <select id="genero" name="genero" class="form-control" required>
+                                                    <option value="M">Masculino</option>
+                                                    <option value="F">Femenino</option>
+                                                </select>
                                             </div>
                                         </div>
                                         <div class="item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3 label-align">Fecha Nacimiento <span class="required">*</span>
                                             </label>
                                             <div class="col-md-6 col-sm-6 ">
-                                                <input id="birthday" class="date-picker form-control" placeholder="dd-mm-yyyy" type="text" required="required" type="text" onfocus="this.type='date'" onmouseover="this.type='date'" onclick="this.type='date'" onblur="this.type='text'" onmouseout="timeFunctionLong(this)">
-                                                <script>
-                                                    function timeFunctionLong(input) {
-                                                        setTimeout(function() {
-                                                            input.type = 'text';
-                                                        }, 60000);
-                                                    }
-                                                </script>
+                                                <input type="date" id="fechaNacimiento" name="fechaNacimiento" class="date-picker form-control">
                                             </div>
                                         </div>
                                         <div class="item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3 label-align">Celular <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6 ">
-                                                <input type="text" required="required" class="form-control ">
+                                                <input type="number" id="celular" name="celular" required class="form-control ">
                                             </div>
                                         </div>
                                         <div class="item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3 label-align">Provincia <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6 ">
-                                                <select id="heard" class="form-control" required>
-                                                    <option value="">***Seleccionar Provincia***</option>
+                                                <select id="provincia" name="provincia" class="form-control" required>
                                                     <option value="San José">San José</option>
                                                     <option value="Alajuela">Alajuela</option>
                                                     <option value="Cartago">Cartago</option>
@@ -127,31 +119,21 @@ include('utilities.php');
                                         <div class="item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3 label-align">Ciudad <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6 ">
-                                                <input type="text" required="required" class="form-control ">
+                                                <input type="text" id="ciudad" name="ciudad" required class="form-control ">
                                             </div>
                                         </div>
-                                        <div class="item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3 label-align">Codigo Postal <span class="required">*</span></label>
-                                            <div class="col-md-6 col-sm-6 ">
-                                                <input type="text" required="required" class="form-control ">
-                                            </div>
-                                        </div>
-
                                         <div class="item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3 label-align">Dirección Exacta <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6 ">
-                                                <input type="text" required="required" class="form-control">
+                                                <input type="text" id="direccionExacta" name="direccionExacta" required class="form-control">
                                             </div>
                                         </div>
-
                                         <div class="ln_solid"></div>
                                         <div class="item form-group">
                                             <div class="col-md-6 col-sm-6 offset-md-3">
-                                                <button class="btn btn-danger" type="button">Cancelar</button>
-                                                <button type="submit" class="btn btn-primary">Crear</button>
+                                                <input class="btn btn-primary" type="submit" value="Crear Cuenta" id="btnRegistrarCuenta" name="btnRegistrarCuenta" disabled>
                                             </div>
                                         </div>
-
                                     </form>
                                 </div>
                             </div>
@@ -164,7 +146,7 @@ include('utilities.php');
             ?>
         </div>
     </div>
-
+    <script src="js/funciones/funcionesRegistro.js"></script>
     <script src="vendors/jquery/dist/jquery.min.js"></script>
     <script src="vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="vendors/fastclick/lib/fastclick.js"></script>
@@ -184,7 +166,6 @@ include('utilities.php');
     <script src="vendors/devbridge-autocomplete/dist/jquery.autocomplete.min.js"></script>
     <script src="vendors/starrr/dist/starrr.js"></script>
     <script src="js/custom.min.js"></script>
-
 </body>
 
 </html>

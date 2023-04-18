@@ -85,30 +85,68 @@ if (isset($_POST["btnRegistrarCuentaCliente"])) {
     $primerNombre = $_POST["primerNombre"];
     $primerApellido = $_POST["primerApellido"];
     $segundoApellido = $_POST["segundoApellido"];
+    $genero = $_POST["genero"];
     $fechaNacimiento = $_POST["fechaNacimiento"];
+    $celular = $_POST["celular"];
+    $direccion = $_POST["provincia"] . ", " . $_POST["ciudad"] . ", " . $_POST["direccionExacta"];
     $correoElectronico = $_POST["correoElectronico"];
     $contrasenna = $_POST["contrasenna"];
 
     $date = new DateTime($fechaNacimiento);
     $fechaNacimiento = $date->format('Y/m/d');
 
-    $resultado = CrearUsuarioClienteModel($primerNombre, $primerApellido, $segundoApellido, $fechaNacimiento, $correoElectronico, $contrasenna);
+    $resultado = CrearUsuarioClienteModel($primerNombre, $primerApellido, $segundoApellido, $fechaNacimiento, $genero, $celular, $direccion, $correoElectronico, $contrasenna);
 
     if ($resultado == true) {
-        echo $resultado;
-        header("location: ../Views/index.php");
+        header("location: ../Views/login.php");
+        echo '<script type="text/javascript">
+        alert(Usuario creado exitosamente!);
+        </script>';
     } else {
-        echo $resultado;
-        echo "No se pudo registrar su cuenta";
+        header("location: ../Views/login.php");
+        echo '<script type="text/javascript">
+        alert(No se pudo registrar su cuenta);
+        </script>';
+    }
+}
+
+if (isset($_POST["btnRegistrarCuenta"])) {
+    $primerNombre = $_POST["primerNombre"];
+    $primerApellido = $_POST["primerApellido"];
+    $segundoApellido = $_POST["segundoApellido"];
+    $correoElectronico = $_POST["correoElectronico"];
+    $genero = $_POST["genero"];
+    $fechaNacimiento = $_POST["fechaNacimiento"];
+    $celular = $_POST["celular"];
+    $direccion = $_POST["provincia"] . ", " . $_POST["ciudad"] . ", " . $_POST["direccionExacta"];
+    $contrasenna = $_POST["contrasenna"];
+
+    $date = new DateTime($fechaNacimiento);
+    $fechaNacimiento = $date->format('Y/m/d');
+
+    $resultado = CrearUsuarioAdministradorModel($primerNombre, $primerApellido, $segundoApellido, $fechaNacimiento, $genero, $celular, $direccion, $correoElectronico, $contrasenna);
+    
+    if ($resultado == true) {
+        header("location: ../Views/index_admin.php");
+        echo '<script type="text/javascript">
+        alert(Usuario creado exitosamente!);
+        </script>';
+    } else {
+        header("location: ../Views/index_admin.php");
+        echo '<script type="text/javascript">
+        alert(No se pudo registrar su cuenta);
+        </script>';
     }
 }
 
 if (isset($_POST["btnActualizarUsuario"])) {
-    $identificacion = $_POST["identificacion"];
-    $nombre = $_POST["nombre"];
-    $rol = $_POST["rol"];
+    $primerNombre = $_POST["primerNombre"];
+    $primerApellido = $_POST["primerApellido"];
+    $segundoApellido = $_POST["segundoApellido"];
+    $genero = $_POST["genero"];
+    $fechaNacimiento = $_POST["fechaNacimiento"];
+    $correoElectronico = $_POST["correoElectronico"];
     $contrasenna = $_POST["contrasenna"];
-    $consecutivo = $_POST["consecutivo"];
 
     $resultado = EditarUsuarioModel($PrimerNombre, $PrimerApellido, $SegundoApellido, $FechaNacimiento, $Correo, $UsuarioId);
 

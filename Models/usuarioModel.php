@@ -1,89 +1,90 @@
 <?php
 include 'connection.php';
 
-function CrearUsuarioAdministradorModel($primerNombre, $primerApellido, $segundoApellido, $fechaNacimiento, $correoElectronico, $contrasenna) #admin -> 4
+function CrearUsuarioAdministradorModel($primerNombre, $primerApellido, $segundoApellido, $fechaNacimiento, $genero, $celular, $direccion, $correoElectronico, $contrasenna) #admin -> 4
 {
     $instancia = Open();
-    $sentencia = "CALL CrearUsuario('$primerNombre', '$primerApellido', '$segundoApellido', $fechaNacimiento, '$correoElectronico', '$contrasenna', 4)";
-    $resultado = $instancia -> query($sentencia);
+    $sentencia = "CALL CrearUsuario('$primerNombre', '$primerApellido', '$segundoApellido', '$fechaNacimiento', '$genero', $celular, '$direccion', '$correoElectronico', '$contrasenna', 4)";
+    $resultado = $instancia->query($sentencia);
 
     Close($instancia);
-    return $resultado;    
+    return $resultado;
 }
 
-function CrearUsuarioClienteModel($primerNombre, $primerApellido, $segundoApellido, $fechaNacimiento, $correoElectronico, $contrasenna) #client -> 5
+function CrearUsuarioClienteModel($primerNombre, $primerApellido, $segundoApellido, $fechaNacimiento, $genero, $celular, $direccion, $correoElectronico, $contrasenna) #cliente -> 5
 {
     $instancia = Open();
     echo $fechaNacimiento;
-    $sentencia = "CALL CrearUsuario('$primerNombre', '$primerApellido', '$segundoApellido', '$fechaNacimiento', '$correoElectronico', '$contrasenna', 5)";
-    $resultado = $instancia -> query($sentencia);
+    $sentencia = "CALL CrearUsuario('$primerNombre', '$primerApellido', '$segundoApellido', '$fechaNacimiento', '$genero', $celular, '$direccion', '$correoElectronico', '$contrasenna', 5)";
+    $resultado = $instancia->query($sentencia);
 
     Close($instancia);
-    return $resultado;     
+    return $resultado;
 }
 
 function VerificarExisteCorreoModel($correoElectronico)
 {
     $instancia = Open();
     $sentencia = "CALL ValidarCorreo('$correoElectronico')";
-    $resultado = $instancia -> query($sentencia);
+    $resultado = $instancia->query($sentencia);
 
     Close($instancia);
-    return $resultado;        
+    return $resultado;
 }
 
 function ObtenerUsuariosModel()
 {
     $instancia = Open();
     $sentencia = "CALL ObtenerUsuarios()";
-    $resultado = $instancia -> query($sentencia);
+    $resultado = $instancia->query($sentencia);
 
     Close($instancia);
-    return $resultado;    
+    return $resultado;
 }
 
 function ObtenerUsuarioModel($UsuarioId)
 {
     $instancia = Open();
     $sentencia = "CALL ObtenerUsuario($UsuarioId)";
-    $resultado = $instancia -> query($sentencia);
+    $resultado = $instancia->query($sentencia);
 
     Close($instancia);
-    return $resultado;    
+    return $resultado;
 }
 
 function EditarUsuarioModel($PrimerNombre, $PrimerApellido, $SegundoApellido, $FechaNacimiento, $Correo, $UsuarioId)
 {
     $instancia = Open();
     $sentencia = "CALL EditarUsuario('$PrimerNombre', '$PrimerApellido', '$SegundoApellido', $FechaNacimiento, '$Correo', $UsuarioId)";
-    $resultado = $instancia -> query($sentencia);
+    $resultado = $instancia->query($sentencia);
 
     Close($instancia);
-    return $resultado;    
+    return $resultado;
 }
 
 function InactivarUsuarioModel($UsuarioId)
 {
     $instancia = Open();
     $sentencia = "CALL InactivarUsuario($UsuarioId)";
-    $resultado = $instancia -> query($sentencia);
+    $resultado = $instancia->query($sentencia);
 
     Close($instancia);
-    return $resultado;    
+    return $resultado;
 }
 
 function ActivarUsuarioModel($UsuarioId)
 {
     $instancia = Open();
     $sentencia = "CALL ActivarUsuario($UsuarioId)";
-    $resultado = $instancia -> query($sentencia);
+    $resultado = $instancia->query($sentencia);
 
     Close($instancia);
-    return $resultado;    
+    return $resultado;
 }
 
-function generadorContrasenna() {
-	$length = 12;
+function generadorContrasenna()
+{
+    $length = 12;
     $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
     $count = mb_strlen($chars);
 
@@ -99,10 +100,8 @@ function VerPerfilesModel()
 {
     $instancia = Open();
     $sentencia = "CALL VerPerfiles();";
-    $resultado = $instancia -> query($sentencia);
+    $resultado = $instancia->query($sentencia);
 
     Close($instancia);
-    return $resultado;   
+    return $resultado;
 }
-
-?>

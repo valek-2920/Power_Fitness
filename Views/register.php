@@ -49,6 +49,37 @@ include_once '../Controllers/usuariosController.php';
 							<input type="text" id="segundoApellido" name="segundoApellido" required>
 						</div>
 						<div>
+							<p>Genero<label>*</label></p>
+							<select id="genero" name="genero" required>
+								<option value="M">Masculino</option>
+								<option value="F">Femenino</option>
+							</select>
+						</div>
+						<div>
+							<p>Celular<label>*</label></p>
+							<input type="number" id="celular" name="celular" required>
+						</div>
+						<div>
+							<p>Provincia<label>*</label></p>
+							<select id="provincia" name="provincia" class="form-control" required>
+								<option value="San José">San José</option>
+								<option value="Alajuela">Alajuela</option>
+								<option value="Cartago">Cartago</option>
+								<option value="Heredia">Heredia</option>
+								<option value="Guanacaste">Guanacaste</option>
+								<option value="Puntarenas">Puntarenas</option>
+								<option value="Limón">Limón</option>
+							</select>
+						</div>
+						<div>
+							<p>Ciudad<label>*</label></p>
+							<input type="text" id="ciudad" name="ciudad" required class="form-control ">
+						</div>
+						<div>
+							<p>Dirección Exacta<label>*</label></p>
+							<input type="text" id="direccionExacta" name="direccionExacta" required class="form-control">
+						</div>
+						<div>
 							<p>Fecha Nacimiento<label>*</label></p>
 							<input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
 						</div>
@@ -64,7 +95,6 @@ include_once '../Controllers/usuariosController.php';
 							<p>Confirmar Contraseña<label>*</label></p>
 							<input type="password" id="confirmarContrasenna" name="confirmarContrasenna" required onkeyup="HabilitarBoton();">
 						</div>
-						<div class="clear"> </div>
 					</div>
 					<div class="clear"> </div>
 					<input type="submit" value="Crear Cuenta" id="btnRegistrarCuentaCliente" name="btnRegistrarCuentaCliente" disabled>
