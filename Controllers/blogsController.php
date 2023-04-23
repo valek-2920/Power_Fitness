@@ -23,6 +23,32 @@ function VerDatosBlogs()
     }
 }
 
+function VerDatosBlogsCliente()
+{
+    $resultado = ObtenerBlogsModel();
+    if ($resultado->num_rows > 0) {
+        while ($datosResultado = mysqli_fetch_array($resultado)) {
+            $administrador = $datosResultado["PrimerNombre"] .  ' ' . $datosResultado["PrimerApellido"] . ' ' . $datosResultado["SegundoApellido"];
+
+            echo '<div class="blog_box">';
+            echo '<div class="blog_grid">';
+            echo '<h3><a href="blog_single.php">' . $datosResultado["Titulo"] . '</a></h3><i class="document3"> </i>';
+            echo '<div class="singe_desc">';
+            echo '<p>' . $datosResultado["Contenido"] . '</p>';
+            echo '<div class="comments">';
+            echo '<ul class="links">';
+            echo '<li><a href="#"><i class="blog_icon1"> </i><br><span>' . $datosResultado["FechaCreacion"] . '</span></a></li>';
+            echo '<li><a href="#"><i class="blog_icon2"> </i><br><span>' . $administrador . '</span></a></li>';
+            echo '</ul>';
+            echo '</div>';
+            echo '<div class="clear"></div>';
+            echo '</div>';
+            echo '</div>';
+            echo '</div>';
+        }
+    }
+}
+
 function verDatosBlog($BlogId)
 {
     $resultado = ObtenerBlogModel($BlogId);
