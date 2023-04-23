@@ -208,6 +208,15 @@ if (isset($_POST["btnNotificar"])) {
     unlink($nombreAdjunto);
 }
 
+
+if (isset($_POST["btnContacto"])) {
+    $nombre = $_POST["nombre"];
+    $correoElectronico = $_POST["correoElectronico"];
+    $mensaje = "La persona " . $nombre . ", correo " . $correoElectronico . ". Realizo la siguiente consulta: " . $_POST["mensaje"];
+
+    EnviarCorreo("fitnesspower725@outlook.com", 'Consulta de ' . $nombre, $mensaje, null);
+}
+
 function EnviarCorreo($destinatario, $asunto, $cuerpo, $pdf)
 {
     require '../PHPMailer/src/PHPMailer.php';

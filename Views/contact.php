@@ -7,6 +7,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 <?php
 include('utilities.php');
+include_once '../Controllers/usuariosController.php';
+
 ?>
 
 <!DOCTYPE HTML>
@@ -46,15 +48,15 @@ include('utilities.php');
 						<p class="contact_msg">En caso de que te sientas con dudas, no dudes en enviarnos un correo electronico</p>
 					</div>
 
-					<form method="post" action="post">
+					<form method="post" action="">
 						<div class="to">
-							<input type="text" class="text" value="Nombre" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}">
-							<input type="text" class="text" value="Correo" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" style="margin-left:20px">
+							<input id="nombre" name="nombre" type="text" class="text" value="Nombre" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}">
+							<input id="correoElectronico" name="correoElectronico" type="text" class="text" value="Correo" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" style="margin-left:20px">
 						</div>
 						<div class="text">
-							<textarea value="Message:" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message';}">Mensaje:</textarea>
+							<textarea id="mensaje" name="mensaje" value="Message:" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message';}">Mensaje:</textarea>
 							<div class="form-submit1">
-								<input name="submit" type="submit" id="submit" value="Enviar tu mensaje"><br>
+								<input name="btnContacto" id="btnContacto" type="submit" value="Enviar tu mensaje"><br>
 							</div>
 						</div>
 						<div class="clear"></div>
