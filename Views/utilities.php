@@ -82,8 +82,9 @@ function navAdmin()
       <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
           <div class="menu_section">
               <ul class="nav side-menu">
-                  <li><a href="index_admin.php"><i class="fa fa-users"></i> Usuarios</a></li>
-                  <li><a href="roles_index_admin.php"><i class="fa fa-tag"></i> Roles</a></li>
+                  <li><a href="index_admin.php"><i class="fa fa-users"></i>Usuarios</a></li>
+                  <li><a href="roles_index_admin.php"><i class="fa fa-tag"></i>Roles</a></li>
+                  <li><a href="blog_index_admin.php"><i class="fa fa-book"></i>Blog</a></li>
               </ul>
           </div>
       </div>

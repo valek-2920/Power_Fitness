@@ -24,7 +24,7 @@ function ObtenerBlogsModel()
     return $resultado;
 }
 
-function ObtenerBlog($BlogId)
+function ObtenerBlogModel($BlogId)
 {
     $instancia = Open();
 
