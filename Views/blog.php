@@ -12,7 +12,7 @@ include('utilities.php');
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Free Gym Website Template | Blog :: w3layouts</title>
+<title>Power Fitness | Blogs </title>
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <link href="css/style.css" rel='stylesheet' type='text/css' />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">

@@ -47,24 +47,24 @@ $resultado = VerDatosRol($_GET["q"]);
                                 <div class="x_content">
                                     <br />
                                     <form action="" method="post" class="form-horizontal form-label-left">
+                                        <input type="hidden" id="rolId" name="rolId" value="<?php echo $resultado["RolId"] ?>">
 
                                         <div class="item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3 label-align">Nombre<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6 ">
-                                                <input type="text" id="nombre" name="nombre" required="required" class="form-control ">
+                                                <input type="text" id="nombre" name="nombre" required="required" class="form-control" value="<?php echo $resultado["Nombre"] ?>">
                                             </div>
                                         </div>
                                         <div class="item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3 label-align">Descripción<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6 ">
-                                                <input type="text" id="descripcion" name="descripcion" required="required" class="form-control ">
+                                                <input type="text" id="descripcion" name="descripcion" required="required" class="form-control" value="<?php echo $resultado["Descripcion"] ?>">
                                             </div>
                                         </div>
                                         <div class="ln_solid"></div>
                                         <div class="item form-group">
                                             <div class="col-md-6 col-sm-6 offset-md-3">
-                                                <button class="btn btn-danger" type="button">Cancelar</button>
-                                                <input  id="btnCrearRol" name="btnCrearRol" type="submit" class="btn btn-primary" value="Crear Rol" />
+                                                <input id="btnActualizarRol" name="btnActualizarRol" type="submit" class="btn btn-primary" value="Actualizar Rol" />
                                             </div>
                                         </div>
                                     </form>
