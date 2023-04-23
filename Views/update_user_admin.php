@@ -3,7 +3,15 @@ include('utilities.php');
 include_once '../Controllers/usuariosController.php';
 
 $resultado = VerDatosUsuario($_GET["q"]);
-$DireccionDatos = explode(', ', $resultado["Direccion"]); ?>
+$DireccionDatos = explode(', ', $resultado["Direccion"]);
+
+if ($resultado["Genero"] == "F") {
+    $resultado["Genero"] = "Femenino";
+} else {
+    $resultado["Genero"] = "Masculino";
+}
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +22,7 @@ $DireccionDatos = explode(', ', $resultado["Direccion"]); ?>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Power Fitness | Usuarios</title>
+    <title>Power Fitness | Usuario</title>
 
     <link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
@@ -76,13 +84,14 @@ $DireccionDatos = explode(', ', $resultado["Direccion"]); ?>
                                         <div class="item form-group">
                                             <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Contraseña <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6 ">
-                                                <input class="form-control" id="contrasenna" name="contrasenna" required type="password" >
+                                                <input class="form-control" id="contrasenna" name="contrasenna" required type="password">
                                             </div>
                                         </div>
                                         <div class="item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3 label-align">Genero <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6 ">
-                                                <select id="genero" name="genero" class="form-control" required value="<?php echo $resultado["Genero"] ?>">
+                                                <select id="genero" name="genero" class="form-control" required>
+                                                    <option value="<?php echo substr($resultado["Genero"], 0, 1) ?>" selected disabled hidden><?php echo $resultado["Genero"] ?></option>
                                                     <option value="M">Masculino</option>
                                                     <option value="F">Femenino</option>
                                                 </select>
@@ -104,7 +113,8 @@ $DireccionDatos = explode(', ', $resultado["Direccion"]); ?>
                                         <div class="item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3 label-align">Provincia <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6 ">
-                                                <select id="provincia" name="provincia" class="form-control" required value="<?php echo $DireccionDatos[0] ?>">
+                                                <select id="provincia" name="provincia" class="form-control" required>
+                                                    <option value="<?php echo $DireccionDatos[0] ?>" selected disabled hidden><?php echo $DireccionDatos[0] ?></option>
                                                     <option value="San José">San José</option>
                                                     <option value="Alajuela">Alajuela</option>
                                                     <option value="Cartago">Cartago</option>

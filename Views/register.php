@@ -14,7 +14,7 @@ include_once '../Controllers/usuariosController.php';
 <html>
 
 <head>
-	<title>Free Gym Website Template | Register :: w3layouts</title>
+	<title>Power Fitness | Registro </title>
 	<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 	<link href="css/style.css" rel='stylesheet' type='text/css' />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -61,7 +61,7 @@ include_once '../Controllers/usuariosController.php';
 						</div>
 						<div>
 							<p>Provincia<label>*</label></p>
-							<select id="provincia" name="provincia" class="form-control" required>
+							<select id="provincia" name="provincia" required>
 								<option value="San José">San José</option>
 								<option value="Alajuela">Alajuela</option>
 								<option value="Cartago">Cartago</option>
@@ -82,19 +82,19 @@ include_once '../Controllers/usuariosController.php';
 						<div>
 							<p>Fecha Nacimiento<label>*</label></p>
 							<input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
+
+							<p style="margin-top: 1.5rem;">Confirmar Contraseña<label>*</label></p>
+							<input type="password" id="confirmarContrasenna" name="confirmarContrasenna" required onkeyup="HabilitarBoton();">
 						</div>
 						<div>
 							<p>Correo Electronico<label>*</label></p>
 							<input type="email" id="correoElectronico" name="correoElectronico" required onkeyup="HabilitarBoton();">
 						</div>
 						<div>
-							<p>Contraseña<label>*</label></p>
+							<p style="margin-top: 0.75rem;">Contraseña<label>*</label></p>
 							<input type="password" id="contrasenna" name="contrasenna" required onkeyup="HabilitarBoton();">
 						</div>
-						<div>
-							<p>Confirmar Contraseña<label>*</label></p>
-							<input type="password" id="confirmarContrasenna" name="confirmarContrasenna" required onkeyup="HabilitarBoton();">
-						</div>
+
 					</div>
 					<div class="clear"> </div>
 					<input type="submit" value="Crear Cuenta" id="btnRegistrarCuentaCliente" name="btnRegistrarCuentaCliente" disabled>

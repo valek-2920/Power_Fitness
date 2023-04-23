@@ -156,6 +156,8 @@ if (isset($_POST["btnActualizarUsuarioCliente"])) {
 
     if ($resultado == true) {
         $_SESSION["NombreUsuario"] = $primerNombre . " " . $primerApellido . " " . $segundoApellido;
+        $_SESSION["Genero"] = $datosResultado["Genero"];
+
         header("location: ../Views/profile.php");
     } else {
         echo "No se pudo actualizar la información";

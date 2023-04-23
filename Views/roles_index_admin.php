@@ -108,7 +108,7 @@ include '../Controllers/rolesController.php';
     <script src="vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
     <script src="js/custom.min.js"></script>
-    <script src="js/funciones/funcionesUsuario.js"></script>
+    <script src="js/funciones/funcionesRol.js"></script>
 
     <!-- Data tables-->
     <script src="vendors/datatables.net/js/jquery.dataTables.min.js"></script>

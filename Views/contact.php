@@ -13,7 +13,7 @@ include('utilities.php');
 <html>
 
 <head>
-	<title>Free Gym Website Template | Contact :: w3layouts</title>
+	<title>Power Fitness | Contactos</title>
 	<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 	<link href="css/style.css" rel='stylesheet' type='text/css' />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">

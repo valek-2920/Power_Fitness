@@ -56,9 +56,9 @@ if (isset($_POST["btnCrearRol"])) {
 }
 
 if (isset($_POST["btnActualizarRol"])) {
-    $RolId = $_POST["RolId"];
-    $Nombre = $_POST["Nombre"];
-    $Descripcion = $_POST["Descripcion"];
+    $RolId = $_POST["rolId"];
+    $Nombre = $_POST["nombre"];
+    $Descripcion = $_POST["descripcion"];
 
     $resultado = EditarRolModel($RolId, $Nombre, $Descripcion);
 
