@@ -7,6 +7,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 <?php
 include('utilities.php');
+include_once '../Controllers/membresiasController.php';
+
 ?>
 
 <!DOCTYPE HTML>
@@ -30,12 +32,9 @@ include('utilities.php');
 		}
 	</script>
 	<script src="js/jquery.min.js"></script>
-	<!-- grid-slider -->
 	<script type="text/javascript" src="js/jquery.mousewheel.js"></script>
 	<script type="text/javascript" src="js/jquery.contentcarousel.js"></script>
 	<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
-	<!-- //grid-slider -->
-	<!-- Add fancyBox main JS and CSS files -->
 	<script src="js/jquery.magnific-popup.js" type="text/javascript"></script>
 	<link href="css/magnific-popup.css" rel="stylesheet" type="text/css">
 	<script>
@@ -73,129 +72,67 @@ include('utilities.php');
 				<h3 class="m_2">Mensualidades y planes</h3>
 				<div class="price_plans_box">
 					<div class="col-md-3">
-						<ul class="price1">
-							<h4>Primer día de entrenamiento</h4>
-							<h3>Gratis</h3>
-							<ul class="price_list">
-								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">soluta nobis eleifend</a></p>
-								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">soluta nobis eleifend</a></p>
-								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">soluta nobis eleifend</a></p>
-								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">soluta nobis eleifend</a></p>
-								<a class="popup-with-zoom-anim" href="#small-dialog">
-									<li class="price_but">Buy Now</li>
-								</a>
-								<!-----pop-up-grid---->
-								<div id="small-dialog" class="mfp-hide">
-									<div class="pop_up">
-										<div class="payment-online-form-left">
-											<form>
-												<h4><span class="shipping"> </span>Shipping</h4>
-												<ul>
-													<li><input class="text-box-dark" type="text" value="Frist Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Frist Name';}"></li>
-													<li><input class="text-box-dark" type="text" value="Last Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Last Name';}"></li>
-												</ul>
-												<ul>
-													<li><input class="text-box-dark" type="text" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}"></li>
-													<li><input class="text-box-dark" type="text" value="Company Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Company Name';}"></li>
-												</ul>
-												<ul>
-													<li><input class="text-box-dark" type="text" value="Phone" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Phone';}"></li>
-													<li><input class="text-box-dark" type="text" value="Address" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Address';}"></li>
-													<div class="clear"> </div>
-												</ul>
-												<div class="clear"> </div>
-												<ul class="payment-type">
-													<h4><span class="payment"> </span> Payments</h4>
-													<li>
-														<span class="col_checkbox">
-															<input id="3" class="css-checkbox1" type="checkbox">
-															<label for="3" name="demo_lbl_1" class="css-label1"> </label>
-															<a class="visa" href="#"> </a>
-														</span>
-													</li>
-													<li>
-														<span class="col_checkbox">
-															<input id="4" class="css-checkbox2" type="checkbox">
-															<label for="4" name="demo_lbl_2" class="css-label2"> </label>
-															<a class="paypal" href="#"> </a>
-														</span>
-													</li>
-													<div class="clear"> </div>
-												</ul>
-												<ul>
-													<li><input class="text-box-dark" type="text" value="Card Number" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Card Number';}"></li>
-													<li><input class="text-box-dark" type="text" value="Name on card" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name on card';}"></li>
-													<div class="clear"> </div>
-												</ul>
-												<ul>
-													<li><input class="text-box-light hasDatepicker" type="text" id="datepicker" value="Expiration Date" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Expiration Date';}"><em class="pay-date"> </em></li>
-													<li><input class="text-box-dark" type="text" value="Security Code" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Security Code';}"></li>
-													<div class="clear"> </div>
-												</ul>
-												<ul class="payment-sendbtns">
-													<li><input type="reset" value="Cancel"></li>
-													<li><input type="submit" value="Process order"></li>
-												</ul>
-												<div class="clear"> </div>
-											</form>
-										</div>
-									</div>
+						<?php
+						VerDatosMembresiaCliente();
+						?>
+						<!-- ---pop-up-grid---->
+						<div id="small-dialog" class="mfp-hide">
+							<div class="pop_up">
+								<div class="payment-online-form-left">
+									<form>
+										<h4><span class="shipping"> </span>Shipping</h4>
+										<ul>
+											<li><input class="text-box-dark" type="text" value="Frist Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Frist Name';}"></li>
+											<li><input class="text-box-dark" type="text" value="Last Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Last Name';}"></li>
+										</ul>
+										<ul>
+											<li><input class="text-box-dark" type="text" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}"></li>
+											<li><input class="text-box-dark" type="text" value="Company Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Company Name';}"></li>
+										</ul>
+										<ul>
+											<li><input class="text-box-dark" type="text" value="Phone" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Phone';}"></li>
+											<li><input class="text-box-dark" type="text" value="Address" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Address';}"></li>
+											<div class="clear"> </div>
+										</ul>
+										<div class="clear"> </div>
+										<ul class="payment-type">
+											<h4><span class="payment"> </span> Payments</h4>
+											<li>
+												<span class="col_checkbox">
+													<input id="3" class="css-checkbox1" type="checkbox">
+													<label for="3" name="demo_lbl_1" class="css-label1"> </label>
+													<a class="visa" href="#"> </a>
+												</span>
+											</li>
+											<li>
+												<span class="col_checkbox">
+													<input id="4" class="css-checkbox2" type="checkbox">
+													<label for="4" name="demo_lbl_2" class="css-label2"> </label>
+													<a class="paypal" href="#"> </a>
+												</span>
+											</li>
+											<div class="clear"> </div>
+										</ul>
+										<ul>
+											<li><input class="text-box-dark" type="text" value="Card Number" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Card Number';}"></li>
+											<li><input class="text-box-dark" type="text" value="Name on card" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name on card';}"></li>
+											<div class="clear"> </div>
+										</ul>
+										<ul>
+											<li><input class="text-box-light hasDatepicker" type="text" id="datepicker" value="Expiration Date" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Expiration Date';}"><em class="pay-date"> </em></li>
+											<li><input class="text-box-dark" type="text" value="Security Code" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Security Code';}"></li>
+											<div class="clear"> </div>
+										</ul>
+										<ul class="payment-sendbtns">
+											<li><input type="reset" value="Cancel"></li>
+											<li><input type="submit" value="Process order"></li>
+										</ul>
+										<div class="clear"> </div>
+									</form>
 								</div>
-								<!-----pop-up-grid---->
-								<div class="clear"></div>
-							</ul>
-						</ul>
-					</div>
-					<div class="col-md-3">
-						<ul class="price1">
-							<h4>Membresía de tres meses</h4>
-							<h2 class="m_25">$33</h2>
-							<ul class="price_list">
-								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">soluta nobis eleifend</a></p>
-								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">soluta nobis eleifend</a></p>
-								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">soluta nobis eleifend</a></p>
-								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">soluta nobis eleifend</a></p>
-								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">soluta nobis eleifend</a></p>
-								<a class="popup-with-zoom-anim" href="#small-dialog">
-									<li class="price_but">Buy Now</li>
-								</a>
-								<div class="clear"></div>
-							</ul>
-						</ul>
-					</div>
-					<div class="col-md-3">
-						<ul class="price1">
-							<h4>Membresía de seis meses</h4>
-							<h2 class="m_25">$59</h2>
-							<ul class="price_list">
-								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">soluta nobis eleifend</a></p>
-								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">soluta nobis eleifend</a></p>
-								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">soluta nobis eleifend</a></p>
-								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">soluta nobis eleifend</a></p>
-								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">soluta nobis eleifend</a></p>
-								<a class="popup-with-zoom-anim" href="#small-dialog">
-									<li class="price_but">Buy Now</li>
-								</a>
-								<div class="clear"></div>
-							</ul>
-						</ul>
-					</div>
-					<div class="col-md-3">
-						<ul class="price1">
-							<h4>Membresía de un año</h4>
-							<h2 class="m_25">$120<small>.00</small></h2>
-							<ul class="price_list">
-								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">soluta nobis eleifend</a></p>
-								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">soluta nobis eleifend</a></p>
-								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">soluta nobis eleifend</a></p>
-								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">soluta nobis eleifend</a></p>
-								<p><img src="images/tick.png" alt="" align="middle" width="16" height="14" /><a href="#">soluta nobis eleifend</a></p>
-								<a class="popup-with-zoom-anim" href="#small-dialog">
-									<li class="price_but">Buy Now</li>
-								</a>
-								<div class="clear"></div>
-							</ul>
-						</ul>
+							</div>
+						</div>
+						<!-----pop-up-grid-- -->
 					</div>
 					<div class="clear"></div>
 				</div>
@@ -205,7 +142,7 @@ include('utilities.php');
 			<div class="container">
 				<li class="question_left">
 					<h4>Tienes dudas?</h4>
-					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.</p>
+					<p>Por favor comunicate con alguno de nuestros empleados a través de nuestras distintas formas de contacto, ya sea nuestro número telefónico, correo o por medio de la página Contacto.</p>
 				</li>
 				<li class="question_right">(+506) 8888-8888</li>
 				<div class="clear"></div>
