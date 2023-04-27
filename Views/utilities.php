@@ -85,6 +85,7 @@ function navAdmin()
                   <li><a href="index_admin.php"><i class="fa fa-users"></i>Usuarios</a></li>
                   <li><a href="roles_index_admin.php"><i class="fa fa-tag"></i>Roles</a></li>
                   <li><a href="blog_index_admin.php"><i class="fa fa-book"></i>Blog</a></li>
+                  <li><a href="memberships_index_admin.php"><i class="fa fa-circle"></i>Membresías</a></li>
               </ul>
           </div>
       </div>

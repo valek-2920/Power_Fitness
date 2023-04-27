@@ -20,23 +20,10 @@ include('utilities.php');
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
-	<script type="application/x-javascript">
-		addEventListener("load", function() {
-			setTimeout(hideURLbar, 0);
-		}, false);
-
-		function hideURLbar() {
-			window.scrollTo(0, 1);
-		}
-	</script>
 	<script src="js/jquery.min.js"></script>
-	<!-- grid-slider -->
 	<script type="text/javascript" src="js/jquery.mousewheel.js"></script>
 	<script type="text/javascript" src="js/jquery.contentcarousel.js"></script>
-	<!-- //grid-slider -->
-	<!---calender-style---->
 	<link rel="stylesheet" href="css/jquery-ui.css" />
-	<!---//calender-style---->
 </head>
 
 <body>
@@ -239,9 +226,7 @@ include('utilities.php');
 				</div>
 			</div>
 		</div>
-		<?php
-		loginSpan();
-		?>
+
 		<div class="about_gallery">
 			<div class="container">
 				<div class="col-md-8">
