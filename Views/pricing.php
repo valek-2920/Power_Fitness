@@ -71,69 +71,10 @@ include_once '../Controllers/membresiasController.php';
 			<div class="row price_plans">
 				<h3 class="m_2">Mensualidades y planes</h3>
 				<div class="price_plans_box">
-					<div class="col-md-3">
-						<?php
-						VerDatosMembresiaCliente();
-						?>
-						<!-- ---pop-up-grid---->
-						<div id="small-dialog" class="mfp-hide">
-							<div class="pop_up">
-								<div class="payment-online-form-left">
-									<form>
-										<h4><span class="shipping"> </span>Shipping</h4>
-										<ul>
-											<li><input class="text-box-dark" type="text" value="Frist Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Frist Name';}"></li>
-											<li><input class="text-box-dark" type="text" value="Last Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Last Name';}"></li>
-										</ul>
-										<ul>
-											<li><input class="text-box-dark" type="text" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}"></li>
-											<li><input class="text-box-dark" type="text" value="Company Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Company Name';}"></li>
-										</ul>
-										<ul>
-											<li><input class="text-box-dark" type="text" value="Phone" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Phone';}"></li>
-											<li><input class="text-box-dark" type="text" value="Address" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Address';}"></li>
-											<div class="clear"> </div>
-										</ul>
-										<div class="clear"> </div>
-										<ul class="payment-type">
-											<h4><span class="payment"> </span> Payments</h4>
-											<li>
-												<span class="col_checkbox">
-													<input id="3" class="css-checkbox1" type="checkbox">
-													<label for="3" name="demo_lbl_1" class="css-label1"> </label>
-													<a class="visa" href="#"> </a>
-												</span>
-											</li>
-											<li>
-												<span class="col_checkbox">
-													<input id="4" class="css-checkbox2" type="checkbox">
-													<label for="4" name="demo_lbl_2" class="css-label2"> </label>
-													<a class="paypal" href="#"> </a>
-												</span>
-											</li>
-											<div class="clear"> </div>
-										</ul>
-										<ul>
-											<li><input class="text-box-dark" type="text" value="Card Number" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Card Number';}"></li>
-											<li><input class="text-box-dark" type="text" value="Name on card" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name on card';}"></li>
-											<div class="clear"> </div>
-										</ul>
-										<ul>
-											<li><input class="text-box-light hasDatepicker" type="text" id="datepicker" value="Expiration Date" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Expiration Date';}"><em class="pay-date"> </em></li>
-											<li><input class="text-box-dark" type="text" value="Security Code" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Security Code';}"></li>
-											<div class="clear"> </div>
-										</ul>
-										<ul class="payment-sendbtns">
-											<li><input type="reset" value="Cancel"></li>
-											<li><input type="submit" value="Process order"></li>
-										</ul>
-										<div class="clear"> </div>
-									</form>
-								</div>
-							</div>
-						</div>
-						<!-----pop-up-grid-- -->
-					</div>
+					<?php
+					VerDatosMembresiaCliente();
+					?>
+	
 					<div class="clear"></div>
 				</div>
 			</div>

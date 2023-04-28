@@ -1,15 +1,15 @@
 <?php
 include 'connection.php';
 
-function CrearMembresiasModel($Nombre, $Descripccion,$Precio)
+function CrearMembresiasModel($Nombre, $Descripccion, $Precio)
 {
     $instancia = Open();
 
     $sentencia = "CALL CrearMembresia('$Nombre', '$Descripccion', $Precio);";
-    $resultado = $instancia -> query($sentencia);
+    $resultado = $instancia->query($sentencia);
 
     Close($instancia);
-    return $resultado;    
+    return $resultado;
 }
 
 function ObtenerMembresiasModel()
@@ -17,10 +17,10 @@ function ObtenerMembresiasModel()
     $instancia = Open();
 
     $sentencia = "CALL ObtenerMembresias();";
-    $resultado = $instancia -> query($sentencia);
+    $resultado = $instancia->query($sentencia);
 
     Close($instancia);
-    return $resultado;    
+    return $resultado;
 }
 
 
@@ -29,21 +29,21 @@ function ObtenerMembresiaModel($MembresiaId)
     $instancia = Open();
 
     $sentencia = "CALL ObtenerMembresia('$MembresiaId');";
-    $resultado = $instancia -> query($sentencia);
+    $resultado = $instancia->query($sentencia);
 
     Close($instancia);
-    return $resultado;    
+    return $resultado;
 }
 
-function EditarMembresiaModel($MembresiaId,$Nombre, $Descripccion ,$Precio)
+function EditarMembresiaModel($MembresiaId, $Nombre, $Descripccion, $Precio)
 {
     $instancia = Open();
 
     $sentencia = "CALL EditarMembresia($MembresiaId, '$Nombre', '$Descripccion', $Precio);";
-    $resultado = $instancia -> query($sentencia);
+    $resultado = $instancia->query($sentencia);
 
     Close($instancia);
-    return $resultado;    
+    return $resultado;
 }
 
 function EliminarMembresiaModel($MembresiaId)
@@ -51,10 +51,31 @@ function EliminarMembresiaModel($MembresiaId)
     $instancia = Open();
 
     $sentencia = "CALL EliminarMembresia('$MembresiaId');";
-    $resultado = $instancia -> query($sentencia);
+    $resultado = $instancia->query($sentencia);
 
     Close($instancia);
-    return $resultado;    
+    return $resultado;
+}
+
+function AgregarUsuarioMembresiaModel($UsuarioId, $MembresiaId, $FechaInicio, $FechaExpiracion)
+{
+    $instancia = Open();
+
+    $sentencia = "CALL AgregarUsuarioMembresia($UsuarioId,$MembresiaId,'$FechaInicio','$FechaExpiracion');";
+    $resultado = $instancia->query($sentencia);
+
+    Close($instancia);
+    return $resultado;
+}
+function ObtenerUsuariosMembresiasModel($UsuarioId)
+{
+    $instancia = Open();
+
+    $sentencia = "CALL ObtenerUsuariosMembresias($UsuarioId);";
+    $resultado = $instancia->query($sentencia);
+
+    Close($instancia);
+    return $resultado;
 }
 
 function ConfirmarPagoModel()
@@ -63,7 +84,7 @@ function ConfirmarPagoModel()
 
     $IdUsuario = $_SESSION["ConsecutivoUsuario"];
     $sentencia = "CALL ConfirmarPago($IdUsuario);";
-    $instancia -> query($sentencia);
+    $instancia->query($sentencia);
 
     Close($instancia);
 }
@@ -74,10 +95,10 @@ function VerFacturasRealizadasModel()
 
     $IdUsuario = $_SESSION["ConsecutivoUsuario"];
     $sentencia = "CALL VerFacturasRealizadas($IdUsuario);";
-    $resultado = $instancia -> query($sentencia);
+    $resultado = $instancia->query($sentencia);
 
     Close($instancia);
-    return $resultado;    
+    return $resultado;
 }
 
 function VerDetalleFacturaModel($IdCompra)
@@ -85,8 +106,8 @@ function VerDetalleFacturaModel($IdCompra)
     $instancia = Open();
 
     $sentencia = "CALL VerDetalleFactura($IdCompra);";
-    $resultado = $instancia -> query($sentencia);
+    $resultado = $instancia->query($sentencia);
 
     Close($instancia);
-    return $resultado;    
+    return $resultado;
 }
