@@ -42,7 +42,7 @@ include '../Controllers/usuariosController.php';
 						<a href="update_user_client.php?q=<?php echo $_SESSION["UsuarioId"] ?>">Actualizar Datos Personales</a>
 					</div>
 					<div class="col-lg-4 col-md-4 m-t-20">
-						<a href="#">Ver Estadística</a>
+						<a href="estadisticas_client.php">Ver Estadística</a>
 					</div>
 					<div class="col-lg-4 col-md-4 m-t-20">
 						<a href="#">Ver Datos Membresía</a>
