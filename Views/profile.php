@@ -45,7 +45,7 @@ include '../Controllers/usuariosController.php';
 						<a href="estadisticas_client.php">Ver Estadística</a>
 					</div>
 					<div class="col-lg-4 col-md-4 m-t-20">
-						<a href="#">Ver Datos Membresía</a>
+						<a href="memberships_client.php">Ver Datos Membresía</a>
 					</div>
 					<div class="col-lg-4 col-md-4 m-t-20">
 						<a href="forgot_password.php">Recuperar Contraseña</a>
